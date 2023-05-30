@@ -1,0 +1,15 @@
+@import "../variables/_variables";
+
+@function size($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - $minWidth;
+  @return calc(
+          #{$mobSize + px} + #{$addSize} *
+          ((100vw - #{$minWidth + px}) / #{$maxWidth})
+  );
+}
+@function vw($displayWidth, $px){
+  $value: (100 / $displayWidth) * $px;
+  @return $value + vw;
+}
+

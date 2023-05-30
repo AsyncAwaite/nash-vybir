@@ -1,0 +1,30 @@
+
+$bg: #ffff;
+$main-color: #005DB8;
+$hover-color: #E7E7E7;
+$white: #ffff;
+$grey: #808080;
+$footer-bg: #2D3032;
+
+
+$maxWidth: 1512;
+$minWidth: 390;
+
+
+
+    :root {
+        --container-gap: #{gem(166)};
+        // --section-padding: #{gem(48)};
+        @media all and (max-width: 992px) {
+          --container-gap: #{gem(40)};
+        //   --section-padding: #{gem(44)};
+        }
+        @media all and (max-width: 576px) {
+          --container-gap: #{gem(16)};
+        //   --section-padding: #{gem(40)};
+        }
+      
+      }
+
+
+

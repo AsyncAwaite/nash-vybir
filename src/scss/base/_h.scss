@@ -1,0 +1,47 @@
+//HEADERS
+@import "func";
+
+h1, .h1 {
+font-size: gem(14);
+line-height: gem(15);
+font-weight: 300;
+  @media all and (max-width: 576px) {
+    font-size: gem(10);
+    line-height: gem(10);
+  }
+}
+
+h2, .h2 {
+// font-family: Avenir;
+letter-spacing: 0.2em;
+font-size: gem(26);
+line-height: gem(36);
+
+
+}
+
+h3, .h3 {
+  font-size: gem(22);
+  line-height: gem(28);
+    @media all and (max-width: 576px) {
+      font-size: gem(29);
+      line-height: gem(32);
+    }
+}
+h4, .h4 {
+  font-weight: 800;
+  font-size: gem(24);
+  line-height: gem(25);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  @media all and (max-width: 992px){
+    font-size: 20px;
+    line-height: 25px;
+  }
+    @media all and (max-width: 576px) {
+      font-size: gem(18);
+      line-height: gem(25);
+    }
+}
+
+

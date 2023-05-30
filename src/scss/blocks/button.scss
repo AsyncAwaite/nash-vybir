@@ -1,0 +1,20 @@
+.btn{
+    height: gem(64);
+    width: gem(280);
+    background-color: $main-color;
+    border: 2px solid $main-color;
+    font-weight: 700;
+    font-size: gem(24);
+    line-height: gem(29);
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    transition: all 0.5s ease-in-out;
+    &:hover{
+        background-color: $hover-color;
+        color: $main-color;
+
+    }
+
+
+}

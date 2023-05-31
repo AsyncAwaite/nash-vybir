@@ -1,0 +1,51 @@
+.categories{
+    &__content{
+        margin-top: gem(24);
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: gem(20);
+        row-gap: gem(30);
+        @media (max-width: 992px){
+            grid-template-columns: repeat(6, 1fr);
+        }
+        @media (max-width: 575px){
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: gem(18);
+            row-gap: gem(25);
+        }
+    }
+    &__item{
+        &:hover{
+            .title{
+                color: $main-color;
+                @media (max-width: 992px){
+                    color: inherit;
+                }
+
+            }
+        }
+        .foto{
+            width: gem(80);
+            height: gem(80);
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            img{
+                object-fit: cover;
+            }
+            @media (max-width: 575px){
+                width: gem(75);
+                height: gem(75);
+            }
+        }
+        .title{
+            margin-top: gem(12);
+            font-weight: 500;
+            font-size: gem(14);
+            line-height: gem(17);
+            text-align: center;
+            transition: color 0.35s ease-in-out;
+        }
+
+    }
+}

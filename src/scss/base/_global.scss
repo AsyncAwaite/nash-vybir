@@ -13,6 +13,7 @@ html {
 }
 
 body {
+  min-width: 100vw;
   position: relative;
   font-family: Inter;
   font-size: gem(18);
@@ -22,10 +23,7 @@ body {
 }
 
 
-.container{
-  padding: 0 size(166, 16) 0;
 
-}
 
 h1,
 h2,
@@ -82,6 +80,11 @@ main {
 
 footer {
   flex-shrink: 0;
+}
+
+section{
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
 }
 
 

@@ -1,0 +1,37 @@
+.main-link{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: gem(2) solid $main-color;
+    width: 100%;
+    padding: gem(18) gem(40);
+    color: $main-color;
+    font-size: gem(36);
+    line-height: GEM(44);
+    font-weight: 700;
+    span{
+        font-size: gem(62);
+        line-height: gem(62);
+    }
+    &:hover{
+        background-color: $light-blue;
+        color: $main-color;
+    }
+    @media (max-width: 992px){
+        padding: gem(18) gem(25);
+        font-size: gem(23);
+        line-height: gem(28);
+        span{
+            font-size: gem(38);
+            line-height: gem(38);
+        }
+    }
+    @media (max-width: 576px){
+        align-items: flex-end;
+        padding: gem(16) gem(16);
+        font-size: gem(20);
+
+
+    }
+
+}

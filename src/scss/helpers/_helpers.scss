@@ -1,0 +1,45 @@
+@import "../base/func";
+
+//TEXT
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+.block {
+  display: block;
+}
+
+.pos-a {
+  position: absolute;
+}
+
+.pos-r {
+  position: relative;
+}
+
+.m-left_24{
+  margin-left: gem(24);
+}
+.bl_0{
+  border-left: 0px
+}
+.mt-32{
+  margin-top: gem(32);
+}
+.mt-10{
+  margin-top: gem(10);
+}
+
+@import "flexbox";
+@import "font";
+@import "text";
+@import "grid";

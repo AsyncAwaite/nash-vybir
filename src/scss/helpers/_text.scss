@@ -1,0 +1,18 @@
+.txt {
+  &-uppercase {
+    text-transform: uppercase;
+  }
+
+  &-center {
+    text-align: center;
+  }
+  &-right{
+    text-align: right;
+  }
+
+  &-color {
+    &__white{
+      color: $white;
+    }
+  }
+}

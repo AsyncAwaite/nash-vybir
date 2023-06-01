@@ -4,9 +4,13 @@
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         column-gap: gem(20);
+        width: 100%;
+
+
         row-gap: gem(30);
         @media (max-width: 992px){
             grid-template-columns: repeat(6, 1fr);
+            column-gap: gem(32);
         }
         @media (max-width: 575px){
             grid-template-columns: repeat(4, 1fr);
@@ -24,7 +28,7 @@
 
             }
         }
-        .foto{
+        .image{
             width: gem(80);
             height: gem(80);
             border-radius: 50%;

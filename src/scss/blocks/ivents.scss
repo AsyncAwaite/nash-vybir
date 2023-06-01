@@ -1,0 +1,19 @@
+.ivents{
+        padding-bottom: gem(278);
+    
+&__container{
+    margin-top: gem(24);
+    border-top: gem(1) solid $grey;
+    border-left: gem(1) solid $grey;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 992px){
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 575px){
+        grid-template-columns:  1fr;
+    }
+
+}
+
+}

@@ -10,16 +10,20 @@
 }
 html {
   height: calc(var(--vh, 1vh) * 100);
+  min-width: 100vw;
+  width: 100vw;
+  overflow-x: hidden;
+
 }
 
 body {
-  min-width: 100vw;
   position: relative;
   font-family: Inter;
   font-size: gem(18);
   line-height: gem(32);
   font-weight: 400;
   margin: 0;
+
 }
 
 
@@ -65,7 +69,7 @@ button {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vw;
   position: relative;
 }
 header{
@@ -85,7 +89,9 @@ footer {
 section{
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
+
 }
+
 
 
 .image {

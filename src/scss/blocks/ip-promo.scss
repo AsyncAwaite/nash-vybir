@@ -1,0 +1,39 @@
+.ip-promo{
+.image{
+    margin-top: gem(32);
+    height: gem(530);
+    @media (max-width: 992px){
+        height: gem(420);  
+    }
+    @media (max-width: 575px){
+        height: gem(240);  
+    }
+
+    img{
+    object-fit: cover;
+    }
+    .ivent__top{
+        display: flex;
+        font-size: gem(18);
+        line-height: gem(24);
+        padding: gem(12) gem(7);
+        top: gem(24);
+        left: gem(24);
+        span{
+            font-style: gem(19);
+        }
+        
+        @media (max-width: 575px){
+            font-size: gem(12);
+            line-height: gem(19);
+            padding: gem(7);;
+
+            span{
+                font-size: gem(20);
+                line-height: gem(20);
+
+            }
+        }
+    }
+}
+}

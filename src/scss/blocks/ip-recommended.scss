@@ -1,0 +1,10 @@
+.recommended{
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: gem(1) solid $grey;
+        border-left: gem(1) solid $grey;
+
+
+    }
+}

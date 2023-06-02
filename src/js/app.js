@@ -23,7 +23,8 @@ window.addEventListener('scroll', function () {
 });
 window.addEventListener("DOMContentLoaded", () => {
     try {
-        scrollToAnchor();
+        // scrollToAnchor();
+
         burger();
         // headerFixed();
 

@@ -13,6 +13,75 @@
     @media (max-width: 575px){
         grid-template-columns:  1fr;
     }
+    .ivent{
+        &:first-child{
+            grid-column: 1/3;
+            grid-row: 1/3;
+            @media (max-width: 575px){
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+            .image{
+                height: gem(395);
+                @media (max-width: 575px){
+                    height: gem(200);
+                }
+            }
+            .ivent__date{
+                line-height: gem(45);
+                font-size: gem(18);
+    
+            }
+            .ivent__title{
+                font-size: gem(36);
+                line-height: gem(41);
+                @media (max-width: 575px){
+                    font-size: gem(28);
+                    line-height: gem(32);
+                }
+    
+                span{
+                    margin-left: gem(30);
+                    font-size: gem(47);
+                    color: red;
+                    display: inline-block;
+                    @media (max-width: 575px){
+                        display: none;
+                    }
+                }
+                
+            }
+     
+    
+        }
+        &:nth-child(2),
+        &:nth-child(3){
+            grid-column: 3/5;
+            @media (max-width: 992px){
+                grid-column: 3/4;
+            }
+            @media (max-width: 575px){
+                grid-column: 1/2;
+            }
+    
+    
+        }
+        &:nth-child(4){
+            grid-row: 3/5;
+            .image{
+                height: gem(395);
+            }
+            @media (max-width: 575px){
+    
+                grid-row: 5/6;
+                .image{
+                    height: gem(200);
+                }
+            }
+    
+        }
+
+    }
 
 }
 

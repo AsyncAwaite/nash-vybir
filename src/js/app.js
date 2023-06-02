@@ -24,7 +24,6 @@ window.addEventListener('scroll', function () {
 window.addEventListener("DOMContentLoaded", () => {
     try {
         scrollToAnchor();
-
         burger();
         // headerFixed();
 

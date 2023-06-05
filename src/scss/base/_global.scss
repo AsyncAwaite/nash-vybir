@@ -2,6 +2,7 @@
 @import "rem";
 @import "func";
 @import "h";
+@import "../libs/datepicker";
 
 * {
   margin: 0;
@@ -17,13 +18,18 @@ html {
 }
 
 body {
+  min-height: -webkit-fill-available;
   position: relative;
   font-family: Inter;
   font-size: gem(18);
   line-height: gem(32);
   font-weight: 400;
   margin: 0;
+  &.active {
+    overflow: hidden;
+    touch-action: none;
 
+  }
 }
 
 

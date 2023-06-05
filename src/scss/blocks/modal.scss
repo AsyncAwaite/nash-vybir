@@ -1,0 +1,252 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+
+  &::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    position: absolute;
+    background: #000000;
+    opacity: 0.4;
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+
+    .modal__body {
+      padding: 0;
+    }
+
+    .modal__wrapper {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s;
+  }
+
+  &__close {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: gem(30);
+    height: gem(30);
+    top: gem(10);
+    right: gem(10);
+    z-index: 5;
+    cursor: pointer;
+    transform: rotate(0);
+    transition: all .35s linear;
+
+    &:hover {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .event-add {
+    height: 80vh;
+    overflow-y: scroll;
+    padding: gem(50) gem(120) gem(80);
+    .form{
+      padding: 0;
+    }
+    @media all and (max-width: 992px){
+      padding: gem(50);
+      .form{
+        .col-lg-6{
+          +.col-lg-6{
+            margin-top: gem(32);
+            .form__item{
+
+              max-width: 100%;
+              .btn{
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media all and (max-width: 576px){
+      padding: gem(25) gem(10);
+    }
+  }
+
+
+  &__title {
+    margin-bottom: gem(15);
+
+    .btn {
+      margin-left: gem(30);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: gem(30);
+    width: 67%;
+    @media all and (max-width: 480px) {
+      width: 100%;
+    }
+  }
+
+  .form {
+    &__login {
+      .form {
+        &__items {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: gem(15) gem(20);
+          @media (max-width: 480px) {
+            gap: gem(10) 0;
+            grid-template-columns: 1fr;
+            .btn {
+              margin-top: gem(25);
+            }
+          }
+        }
+      }
+
+    }
+
+    &[data-form="registration"] {
+      @media all and (max-width: 480px) {
+        .form__item {
+          &:nth-child(2) {
+            grid-row: 4;
+          }
+
+          &:nth-child(4) {
+            grid-row: 5;
+          }
+        }
+      }
+    }
+
+    &[data-form="signin"] {
+      .form__items {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &__single-lot-rate {
+    .modal__wrapper {
+
+      width: 100%;
+      max-width: gem(820);
+      @media (max-width: 1024px) {
+        max-width: 100%;
+      }
+    }
+
+    .btn {
+      height: 100%;
+
+      @media all and (max-width: 480px) {
+        height: gem(55);
+      }
+
+    }
+
+    .info {
+      width: 50%;
+      flex-shrink: 0;
+      margin-bottom: gem(30);
+
+      &__line {
+        margin-bottom: gem(10);
+        display: grid;
+        grid-template-columns: 1fr gem(100);
+        //@media all and (max-width: 480px){
+        //  grid-template-columns: 1fr;
+        //  gap: gem(10) 0;
+        //}
+      }
+
+      @media all and (max-width: 480px) {
+        width: 100%;
+      }
+    }
+
+  }
+
+  &__form-answer {
+    .modal__subtitle {
+      width: 100%;
+    }
+
+    .success {
+      width: 100%;
+      max-width: gem(820);
+
+      @media (max-width: 480px) {
+        max-width: 100%;
+      }
+
+      .form-answer {
+        height: gem(469);
+      }
+    }
+
+    .form-answer {
+      &::before, &::after {
+        content: '';
+        position: absolute;
+      }
+
+      &::before {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        background: url('@img/form-line.png') no-repeat center  / contain;
+      }
+
+      &::after {
+        width: gem(218);
+        height: gem(150);
+        bottom: gem(70);
+        right: gem(85);
+
+        background: url('@img/flag.png') no-repeat center  / contain;
+        @media (max-width: 480px) {
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
+    }
+  }
+
+
+}

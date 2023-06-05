@@ -1,0 +1,31 @@
+.mt {
+  &_32 {
+    margin-top: gem(32);
+  }
+
+  &_10 {
+    margin-top: gem(10);
+  }
+}
+
+.mb {
+  &_0 {
+    margin-bottom: 0!important;
+  }
+  &_16{
+    margin-bottom: gem(16);
+  }
+}
+
+.ml {
+  &_24 {
+    margin-left: gem(24);
+  }
+}
+
+.mr {
+  &_12 {
+    margin-right: gem(12);
+  }
+}
+

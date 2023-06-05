@@ -1,0 +1,15 @@
+.event-add {
+  background-color: #fff;
+  padding: gem(32.46);
+  width: 100%;
+  h2{
+    margin-bottom: gem(48);
+  }
+  @media all and (max-width: 992px){
+    padding: gem(22.46);
+  }
+  @media all and (max-width: 576px){
+    padding: gem(12);
+  }
+
+}

@@ -1,0 +1,62 @@
+.main-content {
+  h1 {
+    margin-bottom: gem(42);
+  }
+
+  &__wrapper {
+    padding-top: gem(24);
+    display: flex;
+    @media all and (max-width: 992px) {
+      flex-direction: column;
+    }
+
+    p {
+      width: 100%;
+      padding-right: gem(45);
+      @media all and (max-width: 992px) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__info-wrapper {
+    font-weight: 500;
+    width: 100%;
+    padding-left: gem(70);
+    @media all and (max-width: 992px) {
+      padding-top: gem(32);
+      padding-left: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: gem(25);
+  }
+
+  &__name {
+    span {
+      color: $grey;
+      margin-left: gem(10);
+    }
+
+    .name-icon {
+      line-height: gem(32);
+      font-size: gem(22);
+    }
+
+  }
+
+  &__value {
+    a {
+      color: $main-color;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

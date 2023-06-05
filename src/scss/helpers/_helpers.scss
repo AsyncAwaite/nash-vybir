@@ -1,5 +1,9 @@
 @import "../base/func";
-
+@import "flexbox";
+@import "font";
+@import "text";
+@import "grid";
+@import "margins";
 //TEXT
 
 .hide {
@@ -26,20 +30,9 @@
   position: relative;
 }
 
-.m-left_24{
-  margin-left: gem(24);
-}
+
 .bl_0{
   border-left: 0px
 }
-.mt-32{
-  margin-top: gem(32);
-}
-.mt-10{
-  margin-top: gem(10);
-}
 
-@import "flexbox";
-@import "font";
-@import "text";
-@import "grid";
+

@@ -5,13 +5,14 @@
     &-logo{
         &__icon{
             width: gem(312);
-            @media (max-width: 992px){
+          height: gem(62);
+          @media all and (max-width: 992px){
                 width: gem(255);
 
             }
-            @media (max-width: 575px){
+          @media all and (max-width: 576px){
                 width: gem(210);
-
+              height: gem(42);
             }
         }
     

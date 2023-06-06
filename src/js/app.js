@@ -17,6 +17,7 @@ import Form from "./modules/Form.js";
 import modalsEvents from "./modules/modalsEvents.js";
 import Modal from "./modules/modal.js";
 import dropdown from "./modules/dropdown.js";
+import slider from "./modules/slider.js";
 
 flsFunctions.isWebp();
 document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
@@ -38,6 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
             new Form('.form-search-event').init();
 
         }
+        slider();
         //
         getElements('[data-target]').forEach(btn => {
             btn.addEventListener('click', () => {

@@ -42,14 +42,18 @@
   .logo {
     &__icon {
       width: gem(380);
-      @media (max-width: 992px) {
+      height: gem(76);
+      @media all and (max-width: 992px){
         width: gem(280);
       }
-      @media (max-width: 575px) {
+      @media all and (max-width: 576px){
         width: gem(192);
+        height: gem(38.5);
       }
+
     }
   }
+
   .header-main {
     display: flex;
     transition: all 0.5s ease-in-out;

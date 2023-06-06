@@ -52,14 +52,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: gem(30);
-    height: gem(30);
-    top: gem(10);
-    right: gem(10);
+    width: gem(24);
+    height: gem(24);
+    top: gem(24);
+    right: gem(24);
     z-index: 5;
     cursor: pointer;
     transform: rotate(0);
     transition: all .35s linear;
+    color: rgba(128, 128, 128, 1);
 
     &:hover {
       transform: rotate(45deg);
@@ -71,25 +72,35 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+
   }
 
   .event-add {
+    position: relative;
     height: 80vh;
     overflow-y: scroll;
     padding: gem(50) gem(120) gem(80);
-    .form{
+
+    .form {
       padding: 0;
+
+      &__item {
+        max-width: gem(420);
+      }
     }
-    @media all and (max-width: 992px){
-      padding: gem(50);
-      .form{
-        .col-lg-6{
-          +.col-lg-6{
+
+    @media all and (max-width: 992px) {
+      padding: gem(50) gem(40);
+      .form {
+        .col-lg-6 {
+          + .col-lg-6 {
             margin-top: gem(32);
-            .form__item{
+
+            .form__item {
 
               max-width: 100%;
-              .btn{
+
+              .btn {
                 margin: 0;
               }
             }
@@ -97,7 +108,7 @@
         }
       }
     }
-    @media all and (max-width: 576px){
+    @media all and (max-width: 576px) {
       padding: gem(25) gem(10);
     }
   }

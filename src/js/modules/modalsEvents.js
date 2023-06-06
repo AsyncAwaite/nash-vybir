@@ -4,32 +4,192 @@
 import {header, modal, modalBody} from "./elements.js";
 import {getElement, getElements, removeActive} from "./helpers.js";
 import Form from "./Form.js";
-import {toggleMenu} from "./burger.js";
+import flatpickr from "flatpickr";
+
 
 export default function modalsEvents(target) {
-    if (target.dataset.target == 'login') {
-        renderLoginModal(target);
-        if (screen.width <= 1024) {
-            toggleMenu()
+    if (target.dataset.target == 'add-event') {
+
+        renderAddEventModal();
+        if (getElement('.form-add-event')) {
+            new Form('.form-add-event').init();
+
         }
 
     }
-    if (target.dataset.target == 'rate') {
-        renderLotRateModal()
-    }
-    // if (target.dataset.target == 'rate-action') {}
+
     if (target.hasAttribute('data-rate')) {
         renderFormAnswer(target)
         // renderReviewModal(target);
     }
     const closeBtn = ` <button type="button" class="modal__close pos-a">
-                <svg class="icon">
-                    <use xlink:href="#close"></use>
-                </svg>
+              <span class="icon-close icon-24"></span>
             </button>`
-    modalBody.insertAdjacentHTML('beforeend', closeBtn)
+    modalBody.firstElementChild.insertAdjacentHTML('beforeend', closeBtn)
 }
+function renderAddEventModal(){
+    modalBody.innerHTML =` <div class="event-add" data-inside>
+                <h2 class="txt-uppercase txt-center">Додати подію</h2>
+                <form action="" class="form form-add-event" data-form="Add new event">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form__item">
+                                <label for="name" class="f-size__16 ">Назва події <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="name" name="name">
+                                    <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
+                                </div>
+                                <div class="form__message"></div>
+                            </div>
+                            <div class="form__item  form__item_date date-item">
+                                <label for="date">Дата і час <span>*</span></label>
+                                <div class="form__input pos-r flex">
+                                    <div class="date-item__icon flex-inline --just-center --align-center">
+                                        <span class="icon-calendar "></span>
+                                    </div>
+                                    <input type="text" id="date" name="date" data-form-date="uk" placeholder="11/11/2011">
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                </div>
+                            </div>
+                            <div class="form__item  ">
+                                <label for="location" class="f-size__16 ">Локація <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="location" name="location">
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                </div>
+                                <div class="form__message">Вкажіть адресу, яку розпізнає Google</div>
+                            </div>
+                            <div class="form__item  ">
+                                <label for="link" class="f-size__16 ">Посилання на організатора / подію
+                                    <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="link" name="link">
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                </div>
+                            </div>
+                            <div class="form__item">
+                                <label class="f-size__16 "> Ціна
+                                    <span>*</span></label>
+                                <ul class="form__price">
+                                    <li data-price="free">Безкоштовно</li>
+                                    <li data-price="volunteer" class="active">Добровільний внесок</li>
+                                    <li data-price="less10">до 10 злотих</li>
+                                    <li data-price="more10">від 10 злотих</li>
 
+                                </ul>
+                            </div>
+                            <div class="form__item form__item_textarea ">
+                                <label for="description">Короткий опис <span>*</span></label>
+                                <div class="form__input form__input_textarea pos-r">
+                                    <textarea id="description"></textarea>
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+
+                                </div>
+                                <div class="form__message"></div>
+                            </div>
+                            <div class="form__upload form__item ">
+                                <div class="form__upload-input d-flex" data-upload="">
+                                    <input type="file" id="file" accept=".png,.jpg,.jpeg" multiple="true">
+                                    <div class="descr">Прикріпити обкладинку (до 3МБ) <span class="icon-add"></span></div>
+                                </div>
+                                <div class="form__upload-container flex --just-between --align-center" data-container="">
+                                  <span>ssfssfsfsdfsdf.img</span>
+                                    <span class="icon-close"></span>
+                                </div>
+                                <div class="error pos-a form__message">
+<!--                                    Макс. розмір файлу не більше 10 мб.-->
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form__item">
+                                <label for="name-pl" class="f-size__16 ">Nazwa wydarzenia <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="name-pl" name="name-pl">
+                                    <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
+                                </div>
+                                <div class="form__message"></div>
+                            </div>
+                            <div class="form__item  form__item_date date-item">
+                                <label for="date-pl">Data i godzina <span>*</span></label>
+                                <div class="form__input pos-r flex">
+                                    <div class="date-item__icon flex-inline --just-center --align-center">
+                                        <span class="icon-calendar "></span>
+                                    </div>
+                                    <input type="text" id="date-pl" name="date-pl" data-form-date="pl" placeholder="11/11/2011">
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                </div>
+                            </div>
+                            <div class="form__item  ">
+                                <label for="location-pl" class="f-size__16 ">Lokalizacja <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="location-pl" name="location-pl">
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                </div>
+                                <div class="form__message">Вкажіть адресу, яку розпізнає Google</div>
+                            </div>
+                            <div class="form__item  ">
+                                <label for="link-pl" class="f-size__16 ">Link do organizatora / wydarzenia
+                                    <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="link-pl" name="link">
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                </div>
+                            </div>
+                            <div class="form__item">
+                                <label class="f-size__16 "> Cena
+                                    <span>*</span></label>
+                                <ul class="form__price">
+                                    <li data-price="free">Bezpłatne</li>
+                                    <li data-price="volunteer" class="active">Darowizna</li>
+                                    <li data-price="less10">do 10 zł</li>
+                                    <li data-price="more10">od 10 zł</li>
+                                </ul>
+                            </div>
+                            <div class="form__item form__item_textarea ">
+                                <label for="description-pl">Krótki opis wydarzenia <span>*</span></label>
+                                <div class="form__input form__input_textarea pos-r">
+                                    <textarea id="description-pl"></textarea>
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+
+                                </div>
+                                <div class="form__message"></div>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="row --align-end">
+                        <div class="col-lg-6">
+                            <div class="form__item form__item_tags mb_0 ">
+                                <label for="date">Обрати теги <span>*</span></label>
+                                <div class="flex --wrap">
+                                    <button class="tag mr_12 active">Для підлітків</button>
+                                    <button class="tag mr_12">Зустрічі</button>
+                                    <button class="tag mr_12">Для дітей</button>
+                                    <button class="tag mr_12">Для всієї родини</button>
+                                    <button class="tag mr_12">Майстер-класи</button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form__item mb_0 mx">
+                                <button type="submit" class="btn mb_16">додати подію</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>`
+}
 function renderLotRateModal() {
     let {id, name, finish_date, min_step, start_price, current_price} = singleLot;
     const step = start_price / 100 * min_step
@@ -187,12 +347,12 @@ function renderFormAnswer(target) {
     modalBody.classList.add('form-answer');
     let title, subtitle;
     if (target.dataset.form == 'success') {
-        title = !isEn ? 'ВАшУ СТАВКУ ПРИЙНЯТО!' : 'thank you!';
-        subtitle = !isEn ? 'Дякуємо за ваш вклад!' : '';
+        title = !isPL ? 'Дякуємо!' : 'thank you!';
+        subtitle = !isPL ? 'Ваша подія відправлена на модерацію!' : '';
         modalBody.parentElement.classList.add('success');
     } else {
-        title = !isEn ? 'Упс...!' : '...';
-        subtitle = !isEn ? "Виникла помилка! Спробуйте пізніше!" : '';
+        title = !isPL ? 'От халепа!' : '...';
+        subtitle = !isPL ? "Щось пішло не так, ваша подія не додана" : '';
         modalBody.classList.add('flex', '--align-center', '--just-center', '--dir-col');
         modalBody.insertAdjacentHTML("afterbegin", `<div class="logo">
               <svg class="icon">

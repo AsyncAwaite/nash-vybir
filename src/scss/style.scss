@@ -1,7 +1,7 @@
 @import "libs/bootstrap-reboot.min";
 @import "fonts";
-@import "icon_font";
 @import "base/_global";
+@import "icon_font";
 @import "helpers/_helpers";
 @import "blocks/header";
 @import "blocks/button";
@@ -16,9 +16,11 @@
 @import "blocks/ip-recommended";
 @import "blocks/modal";
 @import "blocks/event-add";
+@import "blocks/dropdown";
 @import "blocks/form";
 @import "blocks/flatpickr";
 @import "blocks/event_page/event-content";
+@import "blocks/event-search-block";
 
 
 

@@ -4,6 +4,7 @@ import Modal from "./modal.js";
 import {translateFields, lang} from "./base.js";
 import {getElement} from "./helpers.js";
 import flatpickr from "flatpickr";
+
 let validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const content = {
@@ -415,31 +416,32 @@ class Form {
 
     init() {
 
-
-        // let dateParent = this.form.offsetParent.querySelector('[data-date]');
-        // if (dateParent) {
-        //     let date = dateParent.nextElementSibling.querySelector('.selected')
-        //     this.form.querySelector('[name="date"]').value = date.ariaLabel
-        //
-        //     console.dir()
-        // }
-        // flatpickr-input
         if (this.date) {
-            flatpickr(this.date, {
+            this.form.querySelectorAll('[data-form-date]').forEach(element => {
+                console.log(element)
+            })
+            flatpickr(this.form.querySelector('[data-form-date]'), {
                 altInput: true,
-                altFormat: "j F Y",
+                altFormat: "d/m/Y",
                 dateFormat: "Y-m-d",
                 disableMobile: true,
-                // inline: true,
-                // appendTo: this.date.parentElement,
+                monthSelectorType: 'static',
+                yearSelectorType: 'scroll',
+                minDate: "today",
                 static: true,
-                locale: {
-                    firstDayOfWeek: 1 // 1 represents Monday
-                },
+                // locale: 'ru',
+                locale: "uk",
+
+
+                // locale: {
+                //     locale: 'uk',
+                //     firstDayOfWeek: 1 // 1 represents Monday
+                // },
                 // defaultDate: 'today',
                 // minDate: firstDayOfMonth,
                 // maxDate: lastDayOfMonth,
                 onReady: function (selectedDates, dateStr, instance) {
+                    console.log(this)
                     // // Get all the calendar days
                     // const days = instance.calendarContainer.querySelectorAll('.flatpickr-day');
                     //
@@ -463,6 +465,13 @@ class Form {
                     // })
                 }
             });
+            if (this.date.closest('.form__item').querySelector('[data-calendar-btn]')) {
+
+                this.date.closest('.form__item').querySelector('[data-calendar-btn]').addEventListener('click', () => {
+                    this.date.nextElementSibling.click();
+                    // console.log(this.date)form-control
+                })
+            }
         }
 
         this.checkInputs();

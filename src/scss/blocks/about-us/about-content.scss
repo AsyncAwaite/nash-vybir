@@ -1,0 +1,19 @@
+.about-content{
+    .container{
+        h1{
+            margin-bottom: gem(25);
+        }
+        p{
+            font-size: gem(24);
+            line-height: gem(34);
+            margin-bottom: gem(18);
+            @media (max-width: 575px){
+                font-size: gem(18);
+                line-height: gem(24);
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

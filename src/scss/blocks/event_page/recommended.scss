@@ -1,0 +1,10 @@
+.recommended{
+    &__container{
+padding-bottom: gem(96);
+
+
+.event{
+    border-top: gem(1) solid $grey;
+}
+    }
+}

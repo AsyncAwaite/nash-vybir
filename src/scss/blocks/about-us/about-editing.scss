@@ -1,0 +1,28 @@
+.about-editing{
+    margin-bottom: gem(96);
+    .h1{
+        margin-bottom: gem(24);
+    }
+    .authors-content{
+        font-size: gem(24);
+        .title{
+            padding: gem(20);
+            border: gem(1) solid $grey;
+            font-weight: 600;
+            line-height: gem(29);
+        }
+        .description{
+            padding: gem(20);
+            border: gem(1) solid $grey;
+            border-top: none;
+            font-weight: 400;
+            line-height: gem(40);
+            a{
+                text-decoration: underline;
+                &:hover{
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}

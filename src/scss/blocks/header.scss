@@ -32,7 +32,7 @@
 
   }
 
-  .header-ivents {
+  .header-events {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,52 +40,16 @@
 
 
   .logo {
-    display: flex;
-
     &__icon {
-      width: gem(51);
-      height: gem(51);
+      width: gem(380);
       @media (max-width: 992px) {
-        width: gem(25);
-        height: gem(25);
+        width: gem(280);
+      }
+      @media (max-width: 575px) {
+        width: gem(192);
       }
     }
-
-    &__text {
-      margin: gem(13) 0 0 gem(4);
-      @media (max-width: 992px) {
-        margin: gem(10) 0 0 gem(4);
-      }
-    }
-
-    &__title {
-      text-transform: uppercase;
-      font-size: gem(52);
-      line-height: gem(38);
-      font-weight: 500;
-      @media (max-width: 992px) {
-        font-size: gem(26);
-        line-height: gem(19.5);
-      }
-    }
-
-    &__subtitle {
-      font-size: gem(14);
-      line-height: gem(15);
-      font-weight: 300;
-      padding-top: gem(8);
-      margin-left: gem(3);
-      @media (max-width: 992px) {
-        font-size: gem(7.5);
-        line-height: gem(7.5);
-        padding-top: gem(5);
-        margin-left: gem(1);
-      }
-    }
-
-
   }
-
   .header-main {
     display: flex;
     transition: all 0.5s ease-in-out;

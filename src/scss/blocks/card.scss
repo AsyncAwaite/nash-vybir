@@ -1,0 +1,45 @@
+.card{
+    border: gem(1) solid $grey;
+    padding: gem(20);
+    &:hover{
+        .title{
+            color: $main-color;
+        }
+    }
+
+    .image{
+        max-width: gem(340);
+        width: 100%;
+        height: gem(360);
+        margin-bottom: gem(20);
+        img{
+            object-fit: cover;
+        }
+    }
+    .name{
+        margin-bottom: gem(20);
+        font-weight: 600;
+        font-size: gem(28);
+        line-height: gem(26);
+        text-align: center;
+    }
+    .profession{
+        font-size: gem(16);
+        line-height: gem(19);
+        text-align: center;
+    }
+    .title{
+        font-weight: 600;
+        font-size: gem(18);
+        line-height: gem(26);
+        margin-bottom: gem(20);
+        transition: color 0.35s ease-in-out; 
+
+    }
+    .date{
+        font-size: gem(14);
+        line-height: gem(17);
+    }
+
+
+}

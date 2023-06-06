@@ -1,4 +1,4 @@
-.ivents{
+.events{
         padding-bottom: gem(278);
     
 &__container{
@@ -13,7 +13,7 @@
     @media (max-width: 575px){
         grid-template-columns:  1fr;
     }
-    .ivent{
+    .event{
         &:first-child{
             grid-column: 1/3;
             grid-row: 1/3;
@@ -27,12 +27,12 @@
                     height: gem(200);
                 }
             }
-            .ivent__date{
+            .event__date{
                 line-height: gem(45);
                 font-size: gem(18);
     
             }
-            .ivent__title{
+            .event__title{
                 font-size: gem(36);
                 line-height: gem(41);
                 @media (max-width: 575px){

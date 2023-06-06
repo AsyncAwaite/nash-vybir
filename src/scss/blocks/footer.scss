@@ -3,46 +3,17 @@
     background-color: $footer-bg;
     padding: gem(42) 0 gem(24);
     &-logo{
-        display: flex;
         &__icon{
-            width: gem(42);
-            height: gem(2);
+            width: gem(312);
             @media (max-width: 992px){
-                width: gem(28);
-                height: gem(28);
+                width: gem(255);
+
+            }
+            @media (max-width: 575px){
+                width: gem(210);
+
             }
         }
-        &__text{
-            margin: gem(13) 0 0 gem(2);
-            color: $white;
-            @media (max-width: 992px){
-                margin: gem(10) 0 0 gem(2);
-            }
-        }
-        &__title{
-                text-transform: uppercase;
-                font-size: gem(46);
-                line-height: gem(32);
-                font-weight: 500;
-                @media (max-width: 992px){
-                    font-size: gem(26);
-                    line-height: gem(19.5);
-                }
-        }
-        &__subtitle{
-            font-size: gem(11);
-            line-height: gem(12);
-            font-weight: 300;
-            padding-top: gem(8);
-            margin-left: gem(3);
-            @media (max-width: 992px){
-                font-size: gem(7.5);
-                line-height: gem(7.5);
-                padding-top: gem(5);
-                margin-left: gem(1);
-            }
-        }
-    
     
     }
     &__content{

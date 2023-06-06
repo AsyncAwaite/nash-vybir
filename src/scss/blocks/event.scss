@@ -1,15 +1,13 @@
-.ivent{
+.event{
     position: relative;
     display: block;
     padding: gem(24);
     border-bottom: gem(1) solid $grey;
     border-right: gem(1) solid $grey;
-    transition: all 0.35s ease-in-out;
-
-    
+    transition: all 0.35s ease-in-out;   
     &:hover{
         background-color: $light-blue;
-        .ivent__title{
+        .event__title{
             color: $main-color;
         }
     }
@@ -19,9 +17,7 @@
             height: gem(200);
         }
         img{
-            object-fit: cover;
-
-            
+            object-fit: cover;  
         }
     }
     &__date{
@@ -73,7 +69,7 @@
 
 
 }
-.ivent__top{
+.event__top{
     position: absolute;
     top: gem(16);
     left: gem(16);

@@ -1,4 +1,18 @@
 .form {
+  &-search-event {
+    padding: 0;
+  }
+  &__dropdown{
+    height: 100%;
+  }
+
+  .input-icon {
+    padding: 0 gem(22);
+    border: 1px solid #808080;
+    border-right: none;
+    transition: all .35s linear;
+    height: 100%;
+  }
 
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
@@ -13,6 +27,7 @@
   }
 
   &__input {
+
     .icon-check {
       top: 50%;
       transform: translateY(-50%);
@@ -23,6 +38,32 @@
       height: gem(93);
 
     }
+
+    &_search {
+      .input-icon {
+        padding-right: 0;
+      }
+
+      &.form__input {
+        input {
+          border-left: none;
+        }
+      }
+    }
+
+    &:hover {
+      .input-icon {
+        cursor: pointer;
+        background-color: rgb(228, 242, 255);
+        color: $main-color;
+        border-color: $main-color;
+      }
+
+      input {
+        background-color: rgb(228, 242, 255);
+        border-color: $main-color;
+      }
+    }
   }
 
   &__title {
@@ -30,21 +71,22 @@
   }
 
   &__item {
-    max-width: gem(420);
+
     position: relative;
     width: 100%;
 
     margin-bottom: gem(32);
-    @media all and (max-width: 992px){
-      max-width:100%;
+    @media all and (max-width: 992px) {
+      max-width: 100%;
     }
-@media all and (max-width: 576px){
-  margin-bottom: gem(24);
-}
+    @media all and (max-width: 576px) {
+      margin-bottom: gem(24);
+    }
+
     &_textarea {
       margin-top: gem(18);
       margin-bottom: 0;
-      @media all and (max-width: 576px){
+      @media all and (max-width: 576px) {
         margin-top: gem(8);
       }
     }
@@ -55,7 +97,8 @@
         row-gap: gem(12);
 
       }
-      @media all and (max-width: 576px){
+
+      @media all and (max-width: 576px) {
         margin-top: gem(24);
       }
     }
@@ -107,6 +150,7 @@
 
   }
 
+
   .label__tel {
     transform: translateY(gem(-20)) translateX(gem(-10));
     font-size: gem(10);
@@ -144,6 +188,7 @@
 
   input,
   textarea {
+    height: 100%;
     background: transparent;
     appearance: none;
     width: 100%;

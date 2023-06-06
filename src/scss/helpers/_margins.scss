@@ -12,6 +12,9 @@
   &_0 {
     margin-bottom: 0!important;
   }
+  &_12{
+    margin-bottom: gem(12);
+  }
   &_16{
     margin-bottom: gem(16);
   }
@@ -27,5 +30,9 @@
   &_12 {
     margin-right: gem(12);
   }
+}
+.mx{
+  margin-left: auto;
+  margin-right: auto;
 }
 

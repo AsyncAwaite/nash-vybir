@@ -28,6 +28,7 @@ body {
   &.active {
     overflow: hidden;
     touch-action: none;
+    position: fixed;
 
   }
 }
@@ -129,6 +130,8 @@ a {
     text-decoration: none;
   }
 }
-
+#loom-companion-mv3{
+  display: none;
+}
 
 

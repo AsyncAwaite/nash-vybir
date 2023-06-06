@@ -1,0 +1,105 @@
+.event-search {
+  .form {
+
+
+    &__items {
+      border: 1px solid #808080;
+      margin-bottom: gem(35);
+    }
+
+    &__item {
+      width: auto;
+      margin-bottom: 0;
+      flex-shrink: 0;
+
+      &_search {
+        width: gem(501);
+
+        .input-icon {
+          border-left: none;
+        }
+
+        @media all and (max-width: 992px) {
+          width: 100%;
+          border-bottom: 1px solid $grey;
+          input {
+            border-right: none;
+          }
+        }
+      }
+
+      &_location {
+
+        width: gem(180);
+        @media all and (max-width: 576px){
+          border-bottom: 1px solid #808080;
+        }
+      }
+
+      &_date {
+
+
+        input {
+          display: none;
+        }
+
+        .input-icon {
+          border-left: none;
+          @media all and (max-width: 576px) {
+            padding: 0 gem(20);
+          }
+        }
+
+      }
+
+      &_btn {
+        //width: 100%;
+        flex: 1;
+      }
+
+      &_dropdown {
+        border-right: 1px solid #808080;
+        @media all and (max-width: 576px) {
+          flex: 1;
+          border-right: none;
+          border-bottom: 1px solid #808080;
+        }
+      }
+    }
+
+
+    &__input {
+      height: gem(64);
+
+    }
+
+    .input-icon {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    input {
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .flatpickr {
+      &-calendar {
+        width: gem(322);
+        top: 100%;
+        right: -1px;
+        @media all and (max-width: 992px) {
+          animation: none !important;
+          transform: translateX(calc(100% - #{gem(70)}));
+        }
+        @media all and (max-width: 576px) {
+          transform: translateX(calc(100% - #{gem(66)}));
+        }
+      }
+    }
+  }
+
+  .map {
+
+  }
+}

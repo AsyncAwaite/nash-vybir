@@ -10,4 +10,16 @@
   height: gem(40);
   color: $main-color;
   font-weight: 500;
+  @media all and (max-width: 576px){
+    padding: 0 gem(15);
+  }
+  &.active{
+    background-color: $light-blue;
+  }
+  &:hover{
+    background-color: $hover-color;
+  }
+  &_l{
+    height: gem(50);
+  }
 }

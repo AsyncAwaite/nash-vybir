@@ -1,4 +1,3 @@
-@import "libs/bootstrap-reboot.min";
 @import "fonts";
 @import "base/_global";
 @import "icon_font";
@@ -10,16 +9,20 @@
 @import "blocks/promo";
 @import "blocks/categories";
 @import "blocks/main-link";
-@import "blocks/ivents";
-@import "blocks/ivent";
-@import "blocks/ip-promo";
-@import "blocks/ip-recommended";
+@import "blocks/events";
+@import "blocks/event";
+@import "blocks/event_page/promo";
+@import "blocks/event_page/recommended";
 @import "blocks/modal";
 @import "blocks/event-add";
 @import "blocks/dropdown";
 @import "blocks/form";
 @import "blocks/flatpickr";
 @import "blocks/event_page/event-content";
+@import "blocks/about-us/about-content";
+@import "blocks/card";
+@import "blocks/about-us/about-editing";
+
 @import "blocks/event-search-block";
 
 

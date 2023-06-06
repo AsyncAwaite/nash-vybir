@@ -1,0 +1,22 @@
+.recommended {
+  padding-bottom: gem(96);
+
+  &__container {
+    border: 1px solid $grey;
+
+    .event {
+      border-bottom: none;
+      height: auto;
+    }
+
+    .swiper-slide-next {
+      + .event {
+        + .event {
+          border-right: none;
+        }
+      }
+    }
+
+
+  }
+}

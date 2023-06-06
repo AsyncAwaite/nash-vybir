@@ -1,27 +1,26 @@
-.ivent{
+.event{
     position: relative;
     display: block;
     padding: gem(24);
     border-bottom: gem(1) solid $grey;
     border-right: gem(1) solid $grey;
     transition: all 0.35s ease-in-out;
-
-    
+    @media all and (max-width: 992px){
+        padding: gem(16);
+    }
     &:hover{
         background-color: $light-blue;
-        .ivent__title{
+        .event__title{
             color: $main-color;
         }
     }
     .image{
         height: gem(150);
-        @media (max-width: 575px){
+        @media all and (max-width: 576px){
             height: gem(200);
         }
         img{
-            object-fit: cover;
-
-            
+            object-fit: cover;  
         }
     }
     &__date{
@@ -37,13 +36,15 @@
         span{
             display: none;
         }
-        @media (max-width: 992px){
+        @media all and (max-width: 992px){
             font-size: gem(19);
+            line-height: gem(22);
         }
-        @media (max-width: 575px){
+        @media all and (max-width: 576px){
             font-size: gem(28);
             line-height: gem(32);
         }
+
 
     }
 
@@ -73,7 +74,7 @@
 
 
 }
-.ivent__top{
+.event__top{
     position: absolute;
     top: gem(16);
     left: gem(16);

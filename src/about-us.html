@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/head.html',{
-"title":"ГОЛОВНА"
+"title":"Сторінка про нас"
 })
 <body>
 <div class="page-container">
     @@include('html/header.html')
-        <main>
-            @@include('html/promo.html')
-
-
-            @@include('html/categories.html')
-            @@include('html/event-search.html')
-            @@include('html/events.html')
-        </main>
+    <main>
+        @@include('html/about-us/about-content.html')
+        @@include('html/about-us/about-editing.html')
+    </main>
     @@include('html/footer.html')
-     </div>
+</div>
 @@include('html/modal.html',{})
 @@include('html/svg.html',{})
 <script src="app.min.js"></script>

@@ -65,6 +65,10 @@
     &:hover {
       transform: rotate(45deg);
     }
+    @media all and (max-width: 576px){
+      top: gem(10);
+      right: gem(10);
+    }
   }
 
   &__body {

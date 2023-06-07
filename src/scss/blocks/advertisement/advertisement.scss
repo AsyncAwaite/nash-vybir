@@ -1,0 +1,21 @@
+.advertisement{
+    h2{
+        margin-bottom: gem(12);
+    }
+    .filter-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: 992px){
+            align-items: start;
+        }
+        @media (max-width: 575px){
+            flex-direction: column;
+        }
+        .tag{
+            margin-right: gem(12);
+            margin-bottom: gem(12);
+        }
+        
+    }
+}

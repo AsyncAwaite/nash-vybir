@@ -70,7 +70,6 @@ class Form {
             link: location.href
         };
     }
-
     showSearchInput() {
         if (!this.search) return;
         const searchBtn = this.search.querySelector('.search-item__btn');

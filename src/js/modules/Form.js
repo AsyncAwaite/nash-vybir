@@ -76,7 +76,6 @@ class Form {
         let isFind = false;
         if (screen.width >= 993) {
             searchBtn.addEventListener('click', () => {
-
                 if (isFind) {
                     this.search.classList.remove('find');
                     setTimeout(() => {

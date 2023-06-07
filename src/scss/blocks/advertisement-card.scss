@@ -1,0 +1,46 @@
+.advertisement__card{
+    .title{
+        border: gem(1) solid $grey;
+        padding: gem(20);
+        font-weight: 600;
+        font-size: gem(24);
+        line-height: gem(29);
+    }
+    .descr{
+        border: gem(1) solid $grey;
+        border-top: none;
+        font-size: gem(18);
+        line-height: gem(36);
+        padding: gem(20);
+    }
+    .advertisement-footer{
+        display: flex;
+        .category{
+            border: gem(1) solid $grey;
+            border-top: none;
+            padding: gem(20);
+            width: 50%;
+            &__title{
+                margin-bottom: gem(25);
+                font-weight: 600;
+                font-size: gem(18);
+                line-height: gem(22);
+            }
+
+        }
+        .city{
+            border: gem(1) solid $grey;
+            border-top: none;
+            border-left: none;
+            padding: gem(20);
+            width: 50%;
+            &__title{
+                margin-bottom: gem(25);
+                font-weight: 600;
+                font-size: gem(18);
+                line-height: gem(22);
+            }
+        }
+    }
+
+}

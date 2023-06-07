@@ -50,6 +50,7 @@ class Form {
         this.form = document.querySelector(form);
         this.inputs = this.form.querySelectorAll("input");
         this.path = `assets/services/telegramSend.php`;
+        this.search = this.form.querySelector("[data-search]") ? this.form.querySelector("[data-search]") : null;
         // this.path = `${path}/assets/services/telegramSend.php`;
         // this.authPath = `${path}/assets/services/sendPulse.php`;
         this.date = this.form.querySelector('[data-form-date]') ? this.form.querySelector('[data-form-date]') : null;
@@ -68,6 +69,41 @@ class Form {
             organisation: '',
             link: location.href
         };
+    }
+
+    showSearchInput() {
+        if (!this.search) return;
+        const searchBtn = this.search.querySelector('.search-item__btn');
+        let isFind = false;
+        if (screen.width >= 993) {
+            searchBtn.addEventListener('click', () => {
+
+                if (isFind) {
+                    this.search.classList.remove('find');
+                    setTimeout(() => {
+                        this.search.classList.remove('active');
+                    }, 300)
+                    isFind = false;
+                    return;
+                } else {
+                    this.search.classList.add('active');
+                    setTimeout(() => {
+
+                        this.search.classList.add('find');
+                        isFind = true;
+
+
+                    }, 300)
+                }
+
+            })
+        }
+
+
+    }
+
+    formItemsEvents() {
+        this.showSearchInput();
     }
 
     createMask(input) {
@@ -415,7 +451,7 @@ class Form {
     }
 
     init() {
-
+        this.formItemsEvents();
         if (this.date) {
             this.form.querySelectorAll('[data-form-date]').forEach(element => {
                 console.log(element)

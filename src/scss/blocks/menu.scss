@@ -1,0 +1,96 @@
+.menu {
+  font-size: gem(15);
+  line-height: gem(18);
+  font-weight: 500;
+  transition: all .35s linear;
+
+  &__item {
+
+    cursor: pointer;
+
+
+  }
+
+  &__link, &__submenu {
+    display: inline-block;
+    transition: all .35s linear;
+    padding: gem(23) gem(30);
+    position: relative;
+    background-color: transparent;
+
+    &::after {
+      width: 1px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      content: '';
+      position: absolute;
+
+      background-color: $grey;
+    }
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+
+  &__submenu {
+    @media all and (min-width: 1024px) {
+      &:hover {
+        ~ .menu-submenu {
+          opacity: 1;
+          visibility: visible;
+        }
+
+      }
+    }
+
+  }
+
+  &-submenu {
+    top: 100%;
+    width: 100%;
+    left: 0;
+    padding: gem(24) 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s linear;
+
+    &:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &__item {
+      margin-right: gem(48);
+    }
+
+    &__link {
+      cursor: pointer;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+
+  @media all and (max-width: 992px) {
+    flex-direction: column;
+    width: 100%;
+    &__item {
+      border: 1px solid $grey;
+      border-bottom: none;
+
+      &:last-child {
+        border-bottom: 1px solid $grey;
+      }
+    }
+    &__link, &__submenu {
+      width: 100%;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

@@ -65,7 +65,8 @@
     &:hover {
       transform: rotate(45deg);
     }
-    @media all and (max-width: 576px){
+
+    @media all and (max-width: 576px) {
       top: gem(10);
       right: gem(10);
     }
@@ -79,11 +80,17 @@
 
   }
 
-  .event-add {
-    position: relative;
-    height: 80vh;
+  &__content {
+    max-height: 80vh;
     overflow-y: scroll;
-    padding: gem(50) gem(120) gem(80);
+    padding: gem(50) gem(100) gem(80);
+    position: relative;
+    width: 100%;
+    max-width: gem(1180);
+
+    h2 {
+      margin-bottom: gem(48);
+    }
 
     .form {
       padding: 0;
@@ -117,6 +124,10 @@
     }
   }
 
+  .event-add {
+
+  }
+
 
   &__title {
     margin-bottom: gem(15);
@@ -135,6 +146,23 @@
   }
 
   .form {
+    &__item {
+      &_dropdown {
+
+        .dropdown {
+          height: gem(48);
+          border: 1px solid $grey;
+        }
+      }
+
+
+      + .form__item_tags {
+        max-width: 4.2rem !important;
+        padding: 0;
+      }
+
+    }
+
     &__login {
       .form {
         &__items {
@@ -174,46 +202,6 @@
     }
   }
 
-  &__single-lot-rate {
-    .modal__wrapper {
-
-      width: 100%;
-      max-width: gem(820);
-      @media (max-width: 1024px) {
-        max-width: 100%;
-      }
-    }
-
-    .btn {
-      height: 100%;
-
-      @media all and (max-width: 480px) {
-        height: gem(55);
-      }
-
-    }
-
-    .info {
-      width: 50%;
-      flex-shrink: 0;
-      margin-bottom: gem(30);
-
-      &__line {
-        margin-bottom: gem(10);
-        display: grid;
-        grid-template-columns: 1fr gem(100);
-        //@media all and (max-width: 480px){
-        //  grid-template-columns: 1fr;
-        //  gap: gem(10) 0;
-        //}
-      }
-
-      @media all and (max-width: 480px) {
-        width: 100%;
-      }
-    }
-
-  }
 
   &__form-answer {
     .modal__subtitle {

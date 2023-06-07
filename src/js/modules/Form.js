@@ -53,7 +53,7 @@ class Form {
         // this.path = `${path}/assets/services/telegramSend.php`;
         // this.authPath = `${path}/assets/services/sendPulse.php`;
         this.date = this.form.querySelector('[data-form-date]') ? this.form.querySelector('[data-form-date]') : null;
-        this.telInput = this.form.querySelector("[name='tel']") ? this.form.querySelector("[name='tel']") : this.form.querySelector('.tel')
+        this.telInput = this.form.querySelector("[name='phone']") ? this.form.querySelector("[name='phone']") : this.form.querySelector('.tel')
         this.mask = this.telInput ? new IMask(this.telInput, maskOptions) : null;
         this.textarea = this.form.querySelector('textarea') ? this.form.querySelector('textarea') : null;
         this.formData = {

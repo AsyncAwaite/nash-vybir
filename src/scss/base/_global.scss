@@ -2,7 +2,7 @@
 @import "rem";
 @import "func";
 @import "h";
-@import "../libs/datepicker";
+@import "../libs/libs";
 
 * {
   margin: 0;
@@ -10,8 +10,9 @@
   box-sizing: border-box;
 }
 html {
-  height: calc(var(--vh, 1vh) * 100);
+  //height: calc(var(--vh, 1vh) * 100);
   min-width: 100vw;
+  min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
 
@@ -28,6 +29,7 @@ body {
   &.active {
     overflow: hidden;
     touch-action: none;
+    position: fixed;
 
   }
 }
@@ -45,7 +47,6 @@ p,
 label {
   margin: 0;
 }
-h1,
 h2,
 h3{
   text-transform: uppercase;
@@ -75,7 +76,7 @@ button {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 100vw;
+  //min-height: 100vw;
   position: relative;
 }
 header{
@@ -130,6 +131,8 @@ a {
     text-decoration: none;
   }
 }
-
+#loom-companion-mv3{
+  display: none;
+}
 
 

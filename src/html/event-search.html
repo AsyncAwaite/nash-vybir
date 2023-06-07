@@ -1,3 +1,74 @@
 <section class="section event-search">
+    <div class="container">
+        <form class="form form-search-event">
+            <div class="form__items flex --wrap">
+                <div class="form__item form__item_search ">
+                    <div class="form__input form__input_search flex">
+                        <div class="input-icon flex-inline --just-center --align-center">
+                            <span class="icon-search icon-24 "></span>
+                        </div>
+                        <input type="search" placeholder="Пошук події">
+                    </div>
+                </div>
+                <div class="form__item  form__item_date date-item">
+                    <div class="form__input pos-r flex">
+                        <div class=" input-icon flex-inline --just-center --align-center" data-calendar-btn>
+                            <span class="icon-calendar icon-24"></span>
+                        </div>
+                        <input type="text" id="date" name="date" data-form-date="uk" placeholder="11/11/2011">
+                    </div>
+                </div>
+                <div class="form__item form__item_location">
+                   <div class="form__location flex --align-center --just-between">
+                       <div class="place pos-r">
+                           <span class="icon-location icon-24 pos-a"></span>
+                          <div class="place__text"> Варшава</div>
+                       </div>
+                       <span class="icon-close icon-24"></span>
+                   </div>
 
+
+                </div>
+                <div class="form__item form__item_dropdown">
+                    <div class="dropdown">
+                        <div class="dropdown__btn flex --just-between --align-center">
+                            <div class="dropdown__active" data-active="" data-dropdown-default="+0 km">
+                                +0 km
+                            </div>
+                            <span class="icon-down"></span>
+                        </div>
+                        <div class="dropdown__content">
+                            <ul class="dropdown__list">
+                                <li class="dropdown__item">+0 km</li>
+                                <li class="dropdown__item">+2 km</li>
+                                <li class="dropdown__item">+5 km</li>
+                                <li class="dropdown__item">+10 km</li>
+                                <li class="dropdown__item">+15 km</li>
+                                <li class="dropdown__item">+30 km</li>
+                                <li class="dropdown__item">+50 km</li>
+                                <li class="dropdown__item">+75 km</li>
+                                <li class="dropdown__item">+100 km</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__item form__item_btn">
+                    <button class="btn " type="submit">Шукати</button>
+                </div>
+            </div>
+
+            <div class="flex --wrap">
+                <button class="tag tag_l mb_12 mr_12 active">Безкоштовно</button>
+                <button class="tag tag_l mb_12 mr_12">до 10 злотих</button>
+                <button class="tag tag_l mb_12 mr_12">від 10 злотих</button>
+                <button class="tag tag_l mb_12">Добровільний внесок</button>
+            </div>
+
+        </form>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9659315.717213372!2d20.92231231506782!3d52.35094108592719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47009964a4640bbb%3A0x97573ca49cc55ea!2z0J_QvtC70YzRiNCw!5e0!3m2!1sru!2sua!4v1686088296248!5m2!1sru!2sua"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
 </section>

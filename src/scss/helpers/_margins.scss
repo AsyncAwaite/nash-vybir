@@ -12,8 +12,23 @@
   &_0 {
     margin-bottom: 0!important;
   }
+  &_8{
+    margin-bottom: gem(8);
+  }
+  &_12{
+    margin-bottom: gem(12);
+  }
   &_16{
     margin-bottom: gem(16);
+  }
+  &_32{
+    margin-bottom: gem(32);
+  }
+  &_40{
+    margin-bottom: gem(40);
+  }
+  &_20{
+    margin-bottom: gem(20);
   }
 }
 
@@ -27,5 +42,9 @@
   &_12 {
     margin-right: gem(12);
   }
+}
+.mx{
+  margin-left: auto;
+  margin-right: auto;
 }
 

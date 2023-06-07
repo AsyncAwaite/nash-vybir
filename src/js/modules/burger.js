@@ -1,4 +1,5 @@
 import {header} from "./elements.js";
+import {disableScrollAndSwipes, enableScrollAndSwipes} from "./helpers.js";
 
 const burger = () => {
     if (header) {
@@ -11,13 +12,18 @@ const burger = () => {
         close.addEventListener("click", () => {
             burger.classList.toggle("active");
             header.classList.toggle("active");
+
+
             // header.classList.toggle('--show');
             // headerNav.classList.toggle("active");
             // document.body.classList.toggle("active");
         });
         burger.addEventListener("click", () => {
+
             burger.classList.toggle("active");
             header.classList.toggle("active");
+
+
             // header.classList.toggle('--show');
             // headerNav.classList.toggle("active");
             // document.body.classList.toggle("active");

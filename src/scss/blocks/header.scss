@@ -22,9 +22,18 @@
       visibility: visible;
     }
 
-    .header-main {
+    .header-main, .header__menu {
       transform: translateX(0);
     }
+
+    .header__menu {
+      .menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+
   }
 
   @media (max-width: 992px) {
@@ -32,55 +41,111 @@
 
   }
 
-  .header-ivents {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  &__portal {
+    margin-bottom: gem(32);
+
+    .header-main {
+      .btn {
+        margin-right: gem(20);
+
+      }
+
+      @media all and (max-width: 992px) {
+        .btn {
+          position: absolute;
+          bottom: gem(30);
+          left: gem(16);
+          width: auto !important;
+          right: gem(16);
+          margin-right: 0;
+
+          + .flex {
+            justify-content: space-between;
+          }
+        }
+
+        .form-search {
+          margin-top: gem(32);
+        }
+
+      }
+    }
+
+    .search-item {
+      margin-right: gem(20);
+      width: gem(368);
+
+      &__container {
+        text-align: right;
+      }
+
+      &__result {
+        text-align: left;
+      }
+
+
+    }
+
+
+  }
+
+  &__menu {
+    transition: all 0.5s ease-in-out;
+    border: 1px solid $grey;
+
+
+    .menu {
+      + .flex {
+        flex: 1;
+      }
+    }
+
+    @media all and (max-width: 992px) {
+      padding: 0 gem(16);
+      transform: translateX(100%);
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: fixed;
+      height: calc(100vh - #{gem(316)});
+      width: 2.56rem;
+      top: gem(168);
+      right: 0;
+      border: none;
+      flex-direction: column;
+      z-index: 20;
+      .menu {
+        margin-bottom: auto;
+        opacity: 0;
+        visibility: hidden;
+
+        + .flex {
+          margin-top: gem(32);
+          flex: 0;
+          padding: gem(20);
+          border: 1px solid $grey;
+          width: 100%;
+          align-items: center;
+
+          .header__social {
+            padding-left: 0;
+          }
+        }
+
+      }
+    }
   }
 
 
   .logo {
-    display: flex;
 
-    &__icon {
-      width: gem(51);
-      height: gem(51);
-      @media (max-width: 992px) {
-        width: gem(25);
-        height: gem(25);
-      }
+    width: gem(318);
+    height: gem(76);
+    @media all and (max-width: 992px) {
+      width: gem(280);
     }
-
-    &__text {
-      margin: gem(13) 0 0 gem(4);
-      @media (max-width: 992px) {
-        margin: gem(10) 0 0 gem(4);
-      }
-    }
-
-    &__title {
-      text-transform: uppercase;
-      font-size: gem(52);
-      line-height: gem(38);
-      font-weight: 500;
-      @media (max-width: 992px) {
-        font-size: gem(26);
-        line-height: gem(19.5);
-      }
-    }
-
-    &__subtitle {
-      font-size: gem(14);
-      line-height: gem(15);
-      font-weight: 300;
-      padding-top: gem(8);
-      margin-left: gem(3);
-      @media (max-width: 992px) {
-        font-size: gem(7.5);
-        line-height: gem(7.5);
-        padding-top: gem(5);
-        margin-left: gem(1);
-      }
+    @media all and (max-width: 576px) {
+      width: gem(192);
+      height: gem(38.5);
     }
 
 
@@ -91,7 +156,7 @@
     transition: all 0.5s ease-in-out;
     @media (max-width: 992px) {
       position: fixed;
-      height: 100vh;
+      height:  100vh;
       width: gem(256);
       border: solid gem(1) $grey;
       background-color: $white;
@@ -196,6 +261,50 @@
     display: none;
     @media (max-width: 992px) {
       display: flex;
+    }
+  }
+
+  &__social {
+    padding-left: gem(22);
+    padding-right: gem(15);
+
+    a {
+      margin-left: gem(8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        span {
+          color: $main-color;
+        }
+      }
+    }
+
+    position: relative;
+
+    &::after {
+      width: 1px;
+      height: gem(24);
+      top: 50%;
+      right: 0;
+      content: '';
+      position: absolute;
+      transform: translateY(-50%);
+      background-color: $grey;
+    }
+  }
+
+  .lang-switcher {
+    text-transform: uppercase;
+    margin-left: auto;
+    padding: 0 gem(20);
+    text-align: center;
+
+    a {
+      &:hover {
+        color: $main-color;
+      }
     }
   }
 

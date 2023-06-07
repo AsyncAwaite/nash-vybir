@@ -1,11 +1,10 @@
 
 :root {
   // FONT-SIZE
-  --font-size-h1: #{gem(38)};
+  --font-size-h1: #{gem(56)};
   --font-size-h2: #{gem(26)};
   --font-size-h3: #{gem(22)};
   --font-size-body: #{gem(18)};
-  --font-size-body-xs: #{gem(16)};
 
   @media all and (max-width: 992px){
     --font-size-body-xs: #{gem(15)};
@@ -19,12 +18,11 @@
   }
  
   //LINE-HEIGHT
-  --line-height-h1: #{gem(38)};
+  --line-height-h1: #{gem(66)};
   --line-height-h2: #{gem(36)};
   --line-height-h3: #{gem(28)};
   --line-height-body: #{gem(36)};
   --line-height-body-xs: #{gem(19)};
-
 
   @media all and (max-width: 576px) {
     --line-height-h1: #{gem(20)};

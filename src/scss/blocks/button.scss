@@ -27,6 +27,19 @@
     font-size: gem(20);
     line-height: gem(24);
   }
+  &_white{
+    width: auto;
+    height: auto;
+    background-color: $white;
+    color: $main-color;
+    padding: gem(18.5) gem(41.5);
+    &:hover{
+      background-color: $light-blue;
+    }
+    @media (max-width: 575px){
+      width: 100%;
+    }
+  }
 
 
 }

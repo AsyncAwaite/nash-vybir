@@ -11,6 +11,10 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  &::before{
+    color: inherit;
+    transition: all .35s linear;
+  }
 }
 
 .icon-Instagram:before {

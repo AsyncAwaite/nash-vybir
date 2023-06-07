@@ -10,8 +10,9 @@
   box-sizing: border-box;
 }
 html {
-  height: calc(var(--vh, 1vh) * 100);
+  //height: calc(var(--vh, 1vh) * 100);
   min-width: 100vw;
+  min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
 
@@ -75,7 +76,7 @@ button {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 100vw;
+  //min-height: 100vw;
   position: relative;
 }
 header{

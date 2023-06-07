@@ -39,6 +39,10 @@ window.addEventListener("DOMContentLoaded", () => {
             new Form('.form-search-event').init();
 
         }
+        if (getElement('.form-search')) {
+            new Form('.form-search').init();
+
+        }
         slider();
         //
         getElements('[data-target]').forEach(btn => {

@@ -17,6 +17,15 @@ export default function modalsEvents(target) {
         }
 
     }
+    if (target.dataset.target == 'add-ads') {
+
+        renderAddAds();
+        if (getElement('.form-add-ads')) {
+            new Form('.form-add-ads').init();
+
+        }
+
+    }
 
     if (target.hasAttribute('data-rate')) {
         renderFormAnswer(target)
@@ -28,7 +37,7 @@ export default function modalsEvents(target) {
     modalBody.firstElementChild.insertAdjacentHTML('beforeend', closeBtn)
 }
 function renderAddEventModal(){
-    modalBody.innerHTML =` <div class="event-add" data-inside>
+    modalBody.innerHTML =` <div class="event-add modal__content" data-inside>
                 <h2 class="txt-uppercase txt-center">Додати подію</h2>
                 <form action="" class="form form-add-event" data-form="Add new event">
                     <div class="row">
@@ -167,7 +176,7 @@ function renderAddEventModal(){
                     <div class="row --align-end">
                         <div class="col-lg-6">
                             <div class="form__item form__item_tags mb_0 ">
-                                <label for="date">Обрати теги <span>*</span></label>
+                                <label>Обрати теги <span>*</span></label>
                                 <div class="flex --wrap">
                                     <button class="tag mr_12 active">Для підлітків</button>
                                     <button class="tag mr_12">Зустрічі</button>
@@ -190,6 +199,123 @@ function renderAddEventModal(){
 
             </div>`
 }
+function renderAddAds(){
+    modalBody.innerHTML = `    <div class="bgc_white modal__content" data-inside>
+                <h2 class="txt-uppercase txt-center">Додати оголошення</h2>
+                <form action="" class="form form-add-ads" data-form="Add new event">
+                    <div class="row mb_40">
+                        <div class="col-md-6">
+                            <div class="form__item">
+                                <label for="name" class="f-size__16 ">Імʼя <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="name" name="name">
+                                    <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
+                                </div>
+                                <div class="form__message"></div>
+                            </div>
+                            <div class="form__item  form__item_date date-item">
+                                <label for="email">Email <span>*</span></label>
+                                <div class="form__input pos-r flex">
+                                    <input type="email" id="email" name="email" placeholder="email@gmail.com">
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                </div>
+                            </div>
+                            <div class="form__item  ">
+                                <label for="phone" class="f-size__16 ">Номер телефону <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="phone" name="phone">
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                </div>
+                                <div class="form__message">Вкажіть адресу, яку розпізнає Google</div>
+                            </div>
+                            <div class="form__item form__item_dropdown">
+                                <label class="f-size__16 ">Місто
+                                    <span>*</span></label>
+                                <div class="dropdown">
+                                    <div class="dropdown__btn flex --just-between --align-center">
+                                        <div class="dropdown__active" data-active="" data-dropdown-default="+0 km">
+                                            Варшава
+                                        </div>
+                                        <span class="icon-down icon-24"></span>
+                                    </div>
+                                    <div class="dropdown__content">
+                                        <ul class="dropdown__list">
+                                            <li class="dropdown__item active">Варшава</li>
+                                            <li class="dropdown__item">Вроцлав</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form__item">
+                                <label for="title" class="f-size__16 "> Заголовок
+                                    <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="title" name="title">
+                                    <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
+                                </div>
+                                <div class="form__message"></div>
+                            </div>
+                            <div class="form__item ">
+                                <label for="description">Оголошення <span>*</span></label>
+                                <div class="form__input form__input_textarea pos-r">
+                                    <textarea id="description"></textarea>
+                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+
+                                </div>
+                                <div class="form__message"></div>
+                            </div>
+                            <div class="form__item form__item_tags  ">
+                                <label>Обрати теги <span>*</span></label>
+                                <div class="flex --wrap">
+                                    <button class="tag mr_12 active">Пропоную роботу</button>
+                                    <button class="tag mr_12">Шукаю роботу</button>
+                                    <button class="tag mr_12">Шукаю житло</button>
+                                    <button class="tag mr_12">Житло в оренду</button>
+                                    <button class="tag mr_12">Послуги</button>
+                                </div>
+
+                            </div>
+                            <div class="form__item flex --align-center form__checkbox">
+                                <div class="checkbox flex-inline --align-center --just-center">
+                                    <input type="checkbox" name="policy" id="footer-policy"
+                                           value="Оголошення не порушує правила" checked="checked">
+                                    <span class="icon-24 icon-check"></span>
+                                </div>
+
+
+                                <label for="footer-policy">
+
+
+                                    Оголошення не порушує <a href="/privacy-policy" class="f-weight_700"
+                                                             target="_blank">правила
+                                </a>
+                                </label>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="row --align-end">
+
+                        <div class="form__item mb_0 mx">
+                            <button type="submit" class="btn">додати подію</button>
+                        </div>
+
+
+                    </div>
+                </form>
+
+
+            </div>`
+}
+
 function renderLotRateModal() {
     let {id, name, finish_date, min_step, start_price, current_price} = singleLot;
     const step = start_price / 100 * min_step

@@ -4,7 +4,10 @@
     padding: gem(24);
     border-bottom: gem(1) solid $grey;
     border-right: gem(1) solid $grey;
-    transition: all 0.35s ease-in-out;   
+    transition: all 0.35s ease-in-out;
+    @media all and (max-width: 992px){
+        padding: gem(16);
+    }
     &:hover{
         background-color: $light-blue;
         .event__title{
@@ -13,7 +16,7 @@
     }
     .image{
         height: gem(150);
-        @media (max-width: 575px){
+        @media all and (max-width: 576px){
             height: gem(200);
         }
         img{
@@ -33,13 +36,15 @@
         span{
             display: none;
         }
-        @media (max-width: 992px){
+        @media all and (max-width: 992px){
             font-size: gem(19);
+            line-height: gem(22);
         }
-        @media (max-width: 575px){
+        @media all and (max-width: 576px){
             font-size: gem(28);
             line-height: gem(32);
         }
+
 
     }
 

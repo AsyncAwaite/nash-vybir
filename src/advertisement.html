@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>advertisement</title>
-    <link rel="stylesheet" href="assets/css/style.min.css">
-</head>
+@@include('html/head.html',{
+"title":"Сторінка огологення"
+})
 <body>
-    <div class="page-container">
-        @@include('html/header.html')
-            <main>
-                @@include('html/advertisement/advertisement.html')
-            </main>
-        @@include('html/footer.html')
-         </div>
+<div class="page-container">
+    @@include('html/header-portal.html')
+    <main>
+        @@include('html/advertisement/advertisement.html')
+    </main>
+    @@include('html/footer-portal.html')
+</div>
+@@include('html/modal.html',{})
+@@include('html/svg.html',{})
+<script src="app.min.js"></script>
 </body>
 </html>

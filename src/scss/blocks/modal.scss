@@ -52,17 +52,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: gem(30);
-    height: gem(30);
-    top: gem(10);
-    right: gem(10);
+    width: gem(24);
+    height: gem(24);
+    top: gem(24);
+    right: gem(24);
     z-index: 5;
     cursor: pointer;
     transform: rotate(0);
     transition: all .35s linear;
+    color: rgba(128, 128, 128, 1);
 
     &:hover {
       transform: rotate(45deg);
+    }
+
+    @media all and (max-width: 576px) {
+      top: gem(10);
+      right: gem(10);
     }
   }
 
@@ -71,25 +77,41 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+
   }
 
-  .event-add {
-    height: 80vh;
+  &__content {
+    max-height: 80vh;
     overflow-y: scroll;
-    padding: gem(50) gem(120) gem(80);
-    .form{
-      padding: 0;
+    padding: gem(50) gem(100) gem(80);
+    position: relative;
+    width: 100%;
+    max-width: gem(1180);
+
+    h2 {
+      margin-bottom: gem(48);
     }
-    @media all and (max-width: 992px){
-      padding: gem(50);
-      .form{
-        .col-lg-6{
-          +.col-lg-6{
+
+    .form {
+      padding: 0;
+
+      &__item {
+        max-width: gem(420);
+      }
+    }
+
+    @media all and (max-width: 992px) {
+      padding: gem(50) gem(40);
+      .form {
+        .col-lg-6 {
+          + .col-lg-6 {
             margin-top: gem(32);
-            .form__item{
+
+            .form__item {
 
               max-width: 100%;
-              .btn{
+
+              .btn {
                 margin: 0;
               }
             }
@@ -97,9 +119,13 @@
         }
       }
     }
-    @media all and (max-width: 576px){
+    @media all and (max-width: 576px) {
       padding: gem(25) gem(10);
     }
+  }
+
+  .event-add {
+
   }
 
 
@@ -120,6 +146,23 @@
   }
 
   .form {
+    &__item {
+      &_dropdown {
+
+        .dropdown {
+          height: gem(48);
+          border: 1px solid $grey;
+        }
+      }
+
+
+      + .form__item_tags {
+        max-width: 4.2rem !important;
+        padding: 0;
+      }
+
+    }
+
     &__login {
       .form {
         &__items {
@@ -159,46 +202,6 @@
     }
   }
 
-  &__single-lot-rate {
-    .modal__wrapper {
-
-      width: 100%;
-      max-width: gem(820);
-      @media (max-width: 1024px) {
-        max-width: 100%;
-      }
-    }
-
-    .btn {
-      height: 100%;
-
-      @media all and (max-width: 480px) {
-        height: gem(55);
-      }
-
-    }
-
-    .info {
-      width: 50%;
-      flex-shrink: 0;
-      margin-bottom: gem(30);
-
-      &__line {
-        margin-bottom: gem(10);
-        display: grid;
-        grid-template-columns: 1fr gem(100);
-        //@media all and (max-width: 480px){
-        //  grid-template-columns: 1fr;
-        //  gap: gem(10) 0;
-        //}
-      }
-
-      @media all and (max-width: 480px) {
-        width: 100%;
-      }
-    }
-
-  }
 
   &__form-answer {
     .modal__subtitle {

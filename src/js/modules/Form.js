@@ -4,6 +4,7 @@ import Modal from "./modal.js";
 import {translateFields, lang} from "./base.js";
 import {getElement} from "./helpers.js";
 import flatpickr from "flatpickr";
+
 let validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const content = {
@@ -49,10 +50,11 @@ class Form {
         this.form = document.querySelector(form);
         this.inputs = this.form.querySelectorAll("input");
         this.path = `assets/services/telegramSend.php`;
+        this.search = this.form.querySelector("[data-search]") ? this.form.querySelector("[data-search]") : null;
         // this.path = `${path}/assets/services/telegramSend.php`;
         // this.authPath = `${path}/assets/services/sendPulse.php`;
         this.date = this.form.querySelector('[data-form-date]') ? this.form.querySelector('[data-form-date]') : null;
-        this.telInput = this.form.querySelector("[name='tel']") ? this.form.querySelector("[name='tel']") : this.form.querySelector('.tel')
+        this.telInput = this.form.querySelector("[name='phone']") ? this.form.querySelector("[name='phone']") : this.form.querySelector('.tel')
         this.mask = this.telInput ? new IMask(this.telInput, maskOptions) : null;
         this.textarea = this.form.querySelector('textarea') ? this.form.querySelector('textarea') : null;
         this.formData = {
@@ -67,6 +69,40 @@ class Form {
             organisation: '',
             link: location.href
         };
+    }
+    showSearchInput() {
+        if (!this.search) return;
+        const searchBtn = this.search.querySelector('.search-item__btn');
+        let isFind = false;
+        if (screen.width >= 993) {
+            searchBtn.addEventListener('click', () => {
+
+                if (isFind) {
+                    this.search.classList.remove('find');
+                    setTimeout(() => {
+                        this.search.classList.remove('active');
+                    }, 300)
+                    isFind = false;
+                    return;
+                } else {
+                    this.search.classList.add('active');
+                    setTimeout(() => {
+
+                        this.search.classList.add('find');
+                        isFind = true;
+
+
+                    }, 300)
+                }
+
+            })
+        }
+
+
+    }
+
+    formItemsEvents() {
+        this.showSearchInput();
     }
 
     createMask(input) {
@@ -414,32 +450,33 @@ class Form {
     }
 
     init() {
-
-
-        // let dateParent = this.form.offsetParent.querySelector('[data-date]');
-        // if (dateParent) {
-        //     let date = dateParent.nextElementSibling.querySelector('.selected')
-        //     this.form.querySelector('[name="date"]').value = date.ariaLabel
-        //
-        //     console.dir()
-        // }
-        // flatpickr-input
+        this.formItemsEvents();
         if (this.date) {
-            flatpickr(this.date, {
+            this.form.querySelectorAll('[data-form-date]').forEach(element => {
+                console.log(element)
+            })
+            flatpickr(this.form.querySelector('[data-form-date]'), {
                 altInput: true,
-                altFormat: "j F Y",
+                altFormat: "d/m/Y",
                 dateFormat: "Y-m-d",
                 disableMobile: true,
-                // inline: true,
-                // appendTo: this.date.parentElement,
+                monthSelectorType: 'static',
+                yearSelectorType: 'scroll',
+                minDate: "today",
                 static: true,
-                locale: {
-                    firstDayOfWeek: 1 // 1 represents Monday
-                },
+                // locale: 'ru',
+                locale: "uk",
+
+
+                // locale: {
+                //     locale: 'uk',
+                //     firstDayOfWeek: 1 // 1 represents Monday
+                // },
                 // defaultDate: 'today',
                 // minDate: firstDayOfMonth,
                 // maxDate: lastDayOfMonth,
                 onReady: function (selectedDates, dateStr, instance) {
+                    console.log(this)
                     // // Get all the calendar days
                     // const days = instance.calendarContainer.querySelectorAll('.flatpickr-day');
                     //
@@ -463,6 +500,13 @@ class Form {
                     // })
                 }
             });
+            if (this.date.closest('.form__item').querySelector('[data-calendar-btn]')) {
+
+                this.date.closest('.form__item').querySelector('[data-calendar-btn]').addEventListener('click', () => {
+                    this.date.nextElementSibling.click();
+                    // console.log(this.date)form-control
+                })
+            }
         }
 
         this.checkInputs();

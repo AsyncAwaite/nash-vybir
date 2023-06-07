@@ -1,0 +1,9 @@
+.nav-link {
+  font-weight: 700;
+  font-size: gem(16);
+  line-height: gem(20);
+  color: $main-color;
+  &:hover{
+    color: $grey;
+  }
+}

@@ -1617,6 +1617,7 @@ button {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 100vw;
   position: relative
 }
 header {
@@ -2603,6 +2604,11 @@ a:hover {
 .header__portal .search-item__result {
   text-align: left
 }
+@media all and (max-width:992px) {
+  .header__portal {
+    margin-bottom: 0
+  }
+}
 .header__menu {
   transition: all .5s ease-in-out;
   border: 1px solid grey
@@ -2823,6 +2829,21 @@ a:hover {
     line-height: .24rem
   }
 }
+.btn_white {
+  width: auto;
+  height: auto;
+  background-color: #fff;
+  color: #005db8;
+  padding: .185rem .415rem
+}
+.btn_white:hover {
+  background-color: #e4f2ff
+}
+@media (max-width:575px) {
+  .btn_white {
+    width: 100%
+  }
+}
 .nav-link {
   font-weight: 700;
   font-size: .16rem;
@@ -2873,10 +2894,11 @@ a:hover {
   top: 100%;
   width: 100%;
   left: 0;
-  padding: .24rem 0;
+  padding: .05rem 0 .24rem;
   opacity: 0;
   visibility: hidden;
-  transition: all .2s linear
+  transition: all .2s linear;
+  z-index: 10
 }
 .menu-submenu:hover {
   opacity: 1;
@@ -4714,5 +4736,199 @@ a:hover {
 @media all and (max-width:576px) {
   .event-search .form .flatpickr-calendar {
     transform: translateX(calc(100% - .66rem))
+  }
+}
+.advertisement {
+  margin-bottom: .6rem
+}
+.advertisement h2 {
+  margin-bottom: .12rem
+}
+.advertisement .filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem
+}
+@media all and (max-width:992px) {
+  .advertisement .filter-container {
+    align-items: start
+  }
+}
+@media all and (max-width:576px) {
+  .advertisement .filter-container {
+    flex-direction: column
+  }
+}
+.advertisement .filter-container .tag {
+  margin-right: .12rem
+}
+@media all and (max-width:992px) {
+  .advertisement .filter-container .tag {
+    margin-bottom: .08rem
+  }
+}
+.advertisement__card .title {
+  border: .01rem solid grey;
+  padding: .2rem;
+  font-weight: 600;
+  font-size: .24rem;
+  line-height: .29rem
+}
+.advertisement__card .descr {
+  border: .01rem solid grey;
+  border-top: none;
+  font-size: .18rem;
+  line-height: .36rem;
+  padding: .2rem
+}
+.advertisement__card .advertisement-footer {
+  display: flex
+}
+.advertisement__card .advertisement-footer .category {
+  border: .01rem solid grey;
+  border-top: none;
+  padding: .2rem;
+  width: 50%
+}
+.advertisement__card .advertisement-footer .category__title {
+  margin-bottom: .25rem;
+  font-weight: 600;
+  font-size: .18rem;
+  line-height: .22rem
+}
+.advertisement__card .advertisement-footer .city {
+  border: .01rem solid grey;
+  border-top: none;
+  border-left: none;
+  padding: .2rem;
+  width: 50%
+}
+.advertisement__card .advertisement-footer .city__title {
+  margin-bottom: .34rem;
+  font-weight: 600;
+  font-size: .18rem;
+  line-height: .22rem
+}
+.advertisement__card .advertisement-footer .city__name {
+  font-weight: 500;
+  font-size: .18rem;
+  line-height: .22rem
+}
+.interview-promo {
+  position: relative;
+  height: 5.2rem;
+  color: #fff;
+  text-align: center
+}
+@media all and (max-width:992px) {
+  .interview-promo {
+    height: 3.8rem
+  }
+}
+@media all and (max-width:576px) {
+  .interview-promo {
+    height: 2.7rem
+  }
+}
+.interview-promo .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1
+}
+.interview-promo .image img {
+  object-fit: cover
+}
+.interview-promo .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.interview-promo .container .label {
+  text-transform: uppercase;
+  padding: .13rem;
+  background-color: #005db8;
+  width: 1.6rem
+}
+@media all and (max-width:576px) {
+  .interview-promo .container .label {
+    font-size: .1rem;
+    line-height: .14rem;
+    width: 1rem
+  }
+}
+.interview-promo__content {
+  width: 7rem;
+  margin: 0 auto
+}
+@media all and (max-width:992px) {
+  .interview-promo__content {
+    width: 6rem
+  }
+}
+@media all and (max-width:576px) {
+  .interview-promo__content {
+    width: 100%
+  }
+}
+.interview-promo__content h1 {
+  font-weight: 400;
+  font-size: .32rem;
+  line-height: .46rem;
+  margin-bottom: .32rem
+}
+@media all and (max-width:992px) {
+  .interview-promo__content h1 {
+    font-size: .22rem;
+    line-height: .28rem
+  }
+}
+@media all and (max-width:992px) {
+  .interview-promo__content h1 {
+    font-size: .16rem;
+    line-height: .22rem
+  }
+}
+.interview-promo__content .info {
+  display: flex;
+  justify-content: space-around;
+  line-height: .24rem
+}
+.interview-promo__content .info .icon {
+  font-size: .24rem;
+  width: .24rem;
+  height: .24rem;
+  display: block;
+  margin-right: .05rem
+}
+.interview-promo__content .info div {
+  font-size: .18rem;
+  line-height: .22rem
+}
+@media all and (max-width:576px) {
+  .interview-promo__content .info div {
+    font-size: .14rem;
+    line-height: .2rem
+  }
+}
+.interview-promo__title {
+  font-weight: 700;
+  font-size: .5rem;
+  line-height: .62rem
+}
+@media all and (max-width:992px) {
+  .interview-promo__title {
+    font-size: .42rem;
+    line-height: .48rem
+  }
+}
+@media all and (max-width:992px) {
+  .interview-promo__title {
+    font-size: .28rem;
+    line-height: .34rem
   }
 }

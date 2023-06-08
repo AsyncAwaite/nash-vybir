@@ -46,16 +46,15 @@
     }
 
   }
-
   &-submenu {
     top: 100%;
     width: 100%;
     left: 0;
-    padding: gem(24) 0;
+    padding: gem(5) 0 gem(24);
     opacity: 0;
     visibility: hidden;
     transition: all .2s linear;
-
+    z-index: 10;
     &:hover {
       opacity: 1;
       visibility: visible;

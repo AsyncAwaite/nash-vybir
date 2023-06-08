@@ -1,4 +1,5 @@
 .advertisement__card{
+
     .title{
         border: gem(1) solid $grey;
         padding: gem(20);
@@ -35,11 +36,17 @@
             padding: gem(20);
             width: 50%;
             &__title{
-                margin-bottom: gem(25);
+                margin-bottom: gem(34);
                 font-weight: 600;
                 font-size: gem(18);
                 line-height: gem(22);
             }
+            &__name{
+                font-weight: 500;
+                font-size: gem(18);
+                line-height: gem(22);
+            }
+            
         }
     }
 

@@ -1,0 +1,107 @@
+.interview-promo{
+    position: relative;
+    height: gem(520);
+    color: $white;
+    text-align: center;
+    @media all and (max-width: 992px){
+        height: gem(380);  
+    }
+    @media all and (max-width: 576px){
+        height: gem(270);  
+    }
+        .image{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            img{
+                object-fit: cover;
+            }
+        }
+    .container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .label{
+            text-transform: uppercase;
+            padding: gem(13) ;
+            background-color: $main-color;
+            width: gem(160);
+            @media all and (max-width: 576px){
+                font-size: gem(10); 
+                line-height: gem(14);
+                width: gem(100);
+            }
+        }
+    }
+    &__content{
+        width: gem(700);
+        margin: 0 auto;
+        @media all and (max-width: 992px){
+            width: gem(600);
+        }
+        @media all and (max-width: 576px){
+            width: 100%;
+        }
+
+
+        h1{
+            font-weight: 400;
+            font-size: gem(32);
+            line-height: gem(46); 
+            margin-bottom: gem(32);
+            @media all and (max-width: 992px){
+                font-size: gem(22);
+                line-height: gem(28); 
+            }
+            @media all and (max-width: 992px){
+                font-size: gem(16);
+                line-height: gem(22); 
+            }
+          
+        }
+        .info{
+            display: flex;
+            justify-content: space-around;
+            line-height: gem(24);
+            .icon{
+                font-size: gem(24);
+
+                width: gem(24);
+                height: gem(24);
+                display: block;
+                margin-right: gem(5);
+
+            }
+            div{
+                font-size: gem(18);
+                line-height: gem(22);
+                @media all and (max-width: 576px){
+                    font-size: gem(14);
+                    line-height: gem(20); 
+                }
+            }
+
+
+        }
+    }
+    &__title{
+        font-weight: 700;
+        font-size: gem(50);
+        line-height: gem(62); 
+        @media all and (max-width: 992px){
+            font-size: gem(42);
+            line-height: gem(48); 
+        }
+        @media all and (max-width: 992px){
+            font-size: gem(28);
+            line-height: gem(34); 
+        }
+
+
+        
+    }
+}

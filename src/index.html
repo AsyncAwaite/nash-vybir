@@ -6,16 +6,31 @@
 <body>
 <div class="page-container">
     @@include('html/header.html')
-        <main>
-            @@include('html/promo.html')
+    <main>
+        @@include('html/promo.html')
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div>1</div>
+                </div>
+                <div class="col col-sm-6">
+                    <div>2</div>
+                </div>
+                <div class="col">
+                    <div>1</div>
+                </div>
+                <div class="col">
+                    <div>1</div>
+                </div>
+            </div>
+        </div>
 
-
-            @@include('html/categories.html')
-            @@include('html/event-search.html')
-            @@include('html/events.html')
-        </main>
+        @@include('html/categories.html')
+        @@include('html/event-search.html')
+        @@include('html/events.html')
+    </main>
     @@include('html/footer.html')
-     </div>
+</div>
 @@include('html/modal.html',{})
 @@include('html/svg.html',{})
 <script src="app.min.js"></script>

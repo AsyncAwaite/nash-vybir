@@ -85,7 +85,8 @@
 
 
     }
-    @media all and (max-width: 992px){
+
+    @media all and (max-width: 992px) {
       margin-bottom: 0;
     }
 
@@ -139,27 +140,12 @@
   }
 
 
-  .logo {
-
-    width: gem(318);
-    height: gem(76);
-    @media all and (max-width: 992px) {
-      width: gem(280);
-    }
-    @media all and (max-width: 576px) {
-      width: gem(192);
-      height: gem(38.5);
-    }
-
-
-  }
-
   .header-main {
     display: flex;
     transition: all 0.5s ease-in-out;
     @media (max-width: 992px) {
       position: fixed;
-      height:  100vh;
+      height: 100vh;
       width: gem(256);
       border: solid gem(1) $grey;
       background-color: $white;
@@ -310,5 +296,22 @@
       }
     }
   }
+
+}
+
+.logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: gem(318);
+  height: gem(76);
+  @media all and (max-width: 992px) {
+    width: gem(280);
+  }
+  @media all and (max-width: 576px) {
+    width: gem(192);
+    height: gem(38.5);
+  }
+
 
 }

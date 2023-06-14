@@ -69,18 +69,20 @@
             line-height: gem(24);
             .icon{
                 font-size: gem(24);
-
                 width: gem(24);
                 height: gem(24);
                 display: block;
                 margin-right: gem(5);
-
+                @media all and (max-width: 576px){
+                    font-size: gem(16);
+                    line-height: gem(20); 
+                }
             }
             div{
                 font-size: gem(18);
                 line-height: gem(22);
                 @media all and (max-width: 576px){
-                    font-size: gem(14);
+                    font-size: gem(10);
                     line-height: gem(20); 
                 }
             }

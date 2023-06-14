@@ -1,0 +1,22 @@
+.news-page{ 
+    .container{
+        position: relative;
+        .image{
+            width: 100%;
+            height: gem(520);
+            img{
+                object-fit:cover;
+            }
+        }
+        .label{
+            font-weight: 700;
+            line-height: gem(48);
+            position: absolute;
+            top: gem(24);
+            text-transform: uppercase;
+            color: $white;
+            padding: 0 gem(47);
+            background-color: #DC143C;
+        }    
+    }
+}

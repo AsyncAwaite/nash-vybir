@@ -1,0 +1,32 @@
+.interview-dialogue{
+    .container{
+        .interview-wrapper{
+            .interview-descr{
+                font-weight: 700;
+                font-size: gem(24);
+                line-height: gem(42);
+                @media all and (max-width: 576px){
+                    font-size: gem(16);
+                    line-height: gem(30); 
+                }
+                a{
+                    color: $main-color;
+                    text-decoration: underline;
+                }
+            }
+            .dialogue-bloc{
+                @media all and (max-width: 576px){
+                    font-size: gem(14);
+                    line-height: gem(24);
+                }
+                .question{
+                    font-weight: 700;
+                }
+            }
+            img{
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+}

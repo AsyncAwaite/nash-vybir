@@ -1,0 +1,15 @@
+.profile-form{
+    .input{
+        max-width: gem(420);
+        width: 100%;
+        input{
+            height: gem(48);
+            border: gem(1) solid $grey;
+            padding: 0 gem(20);
+            }
+    }
+    .btn{
+        line-height: gem(48);
+        height: gem(48);
+        }
+}

@@ -1,0 +1,97 @@
+.login {
+  min-height: 100vh;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  @media all and (max-width: 576px){
+    padding: gem(65) 0;
+  }
+
+
+  .image {
+    width: 44%;
+
+
+    img {
+      object-fit: cover;
+    }
+
+    @media all and (max-width: 576px) {
+      display: none;
+    }
+  }
+
+  &__content {
+    flex: 1 0 auto;
+
+    .logo {
+      max-width: 100%;
+      width: gem(380);
+      height: gem(76);
+      margin-bottom: gem(40);
+      @media all and (max-width: 576px){
+        width: gem(270);
+        height: gem(54);
+      }
+    }
+
+    .form {
+      h2 {
+        font-family: Inter;
+        margin-bottom: gem(38);
+      }
+
+      .divider {
+        font-size: gem(18);
+        line-height: gem(22);
+        margin: gem(24) auto;
+
+        &::before, &::after {
+          width: gem(145);
+          height: 1px;
+          background: #D9D9D9;
+          top: 50%;
+          transform: translateY(-50%);
+          content: '';
+          position: absolute;
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+      }
+      @media all and (max-width: 576px){
+        padding: 0 gem(15);
+      }
+    }
+  }
+
+  &__google {
+    height: gem(64);
+    border: 2px solid #808080;
+    font-size: gem(20);
+    line-height: gem(24);
+    background-color: transparent;
+    transition: background-color .35s linear;
+
+
+    span {
+      &:first-child {
+        margin-right: gem(10);
+      }
+
+      &:last-child {
+        width: gem(24);
+        height: gem(24);
+      }
+    }
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}

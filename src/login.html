@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"сторінка окремої події"
+})
+<body>
+<main>
+    <section class="section__login login flex">
+        <div class="image"><img src="@img/login.png" alt=""></div>
+        <div class="login__content flex --align-center --just-center --dir-col">
+
+            <a class="logo" href="/">
+                <svg class="icon">
+                    <use xlink:href="#logo"></use>
+                </svg>
+            </a>
+            <form action="" class="form">
+                <h2 class="txt-uppercase f-weight_800">
+                    зареєструватися
+                </h2>
+                <div class="form__item">
+                    <label for="email" class="f-size__16 ">E-mail</label>
+                    <div class="form__input pos-r">
+                        <input type="text" id="email" name="email">
+                        <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
+                    </div>
+                    <div class="form__message"></div>
+                </div>
+                <div class="form__item">
+                    <label for="password" class="f-size__16 ">Пароль</label>
+                    <div class="form__input pos-r">
+                        <input type="password" id="password" name="password">
+                        <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
+                    </div>
+                    <div class="form__message"></div>
+                </div>
+                <div class="form__item">
+                    <label for="password-repeat" class="f-size__16 ">Пароль повторно </label>
+                    <div class="form__input pos-r">
+                        <input type="password" id="password-repeat" name="password-repeat">
+                        <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
+                    </div>
+                    <div class="form__message"></div>
+                </div>
+                <button class="btn" type="submit">
+                    зареєструватися
+                </button>
+                <div class="divider txt-center pos-r">
+                    або
+                </div>
+                <a href="#" class="login__google flex --align-center --just-center">
+                    <span>Продовжити з <b>Google</b></span><span><svg class="icon">
+                      <use xlink:href="#google"></use>
+                    </svg></span>
+                </a>
+            </form>
+
+
+        </div>
+    </section>
+</main>
+@@include('html/modal.html',{})
+@@include('html/svg.html',{})
+<script src="app.min.js"></script>
+</body>
+</html>

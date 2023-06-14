@@ -10,10 +10,11 @@
   text-align: center;
   text-transform: uppercase;
   color: $white;
-  transition: all 0.5s ease-in-out;
-  display: flex;
+  transition: all 0.35s linear;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   &:hover {
     background-color: $hover-color;
     color: $main-color;
@@ -43,7 +44,7 @@
   }
   &_telegram{
     height: 100%;
-    
+
   }
   &_center{
     margin: 0 auto;

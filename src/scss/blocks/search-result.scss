@@ -1,0 +1,17 @@
+.search-result{
+        padding-bottom: gem(96);
+    &__items{
+        margin-bottom: gem(64);
+    }
+    &__item{
+        height: auto;
+        min-height: gem(230);
+        padding: gem(18);
+        background-color: $light-grey;
+        font-weight: 600;
+        font-size: gem(22);
+        line-height: gem(28);
+        margin-bottom: gem(16);
+
+    }
+}

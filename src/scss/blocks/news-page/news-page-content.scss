@@ -1,0 +1,46 @@
+.news-page-content{
+    h1{
+        font-size: gem(50);
+        line-height: gem(61);
+        @media all and (max-width: 576px){
+            font-size: gem(36);
+            line-height: gem(48);
+        }
+    }
+    &__article{
+        .title{
+            font-weight: 700;
+            font-size: gem(24);
+            line-height: gem(42);
+        }
+    }
+    p{
+        margin-bottom: gem(12);
+    }
+    &__banners{
+        @media all and (max-width: 992px){
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .banner{
+            display: block;
+            width: 100%;
+            height: gem(400);
+            background: gray;  
+            text-align: center;
+            @media all and (max-width: 992px){
+                width: 31%;
+                height: gem(280);
+                flex-wrap: wrap;
+
+            }
+            @media all and (max-width: 576px){
+                width: 48%;
+                height: gem(220);
+            }
+        }
+    }
+
+}

@@ -4,10 +4,10 @@
   border-radius: gem(40);
   transition: all .35s linear;
   display: inline-flex;
-  padding: 0 gem(20);
+  padding: gem(5) gem(20);
   justify-content: center;
   align-items: center;
-  height: gem(40);
+  text-align: center;
   color: $main-color;
   font-weight: 500;
   @media all and (max-width: 576px){

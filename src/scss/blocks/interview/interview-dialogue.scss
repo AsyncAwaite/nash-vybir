@@ -19,70 +19,14 @@
                     font-size: gem(14);
                     line-height: gem(24);
                 }
-
                 .question{
                     font-weight: 700;
                 }
             }
-
             img{
                 height: auto;
                 width: 100%;
             }
-        }
-    }
-    .lincs{
-        .tag{
-            @media all and (max-width: 576px){
-                margin-bottom: gem(16);
-                &:last-child{
-                    margin-bottom: 0;
-                }
-            }
-        }
-        .social{
-            @media all and (max-width: 576px){
-                display: flex;
-                justify-content: end;
-                align-items: center;
-            }
-            a{
-                &:hover{
-                    color: $main-color;
-                }
-                @media all and (max-width: 576px){
-                    margin-bottom: gem(16);
-                }
-            }
-
-        }
-    }
-    .telegram-bot{
-        padding-left: gem(40);
-        border: gem(2) solid $main-color;
-        @media all and (max-width: 576px){
-            padding-left: gem(15);}
-        .descr{
-            font-weight: 700;
-            font-size: gem(36);
-            line-height: gem(96);
-            color: $main-color;
-            @media all and (max-width: 992px){
-                font-size: gem(26);
-                line-height: gem(48);
-            }
-            @media all and (max-width: 576px){
-                font-size: gem(14);
-                line-height: gem(18);  
-            }
-        }
-        .btn{
-            height: gem(96);
-            @media all and (max-width: 576px){
-                font-size: gem(14);
-                height: gem(64);
-            }
-
         }
     }
 }

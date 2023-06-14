@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Результат пошуку"
+})
+</head>
+<body>
+<div class="page-container">
+    @@include('html/header-portal.html')
+    <main>
+        <section class="search-failed">
+            <div class="container">
+                <h2 class="mb_16">
+                    <!-- максимум 12 символів -->
+                    Результати пошуку для <span>“вапмgggжлфау”</span>
+                </h2>
+
+                <div class="search-failed__txt ">
+                    На жаль, ми нічого не знайшли. Спробуйте ще раз!
+                </div>
+
+                <div class="interview-interactive">
+                    <div class="telegram-bot flex --just-between --align-center">
+                        <div class="descr">
+                            Новини від “Нашого вибору” в Телеграмі
+                        </div>
+                        <div class="btn">
+                            підписатись
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    @@include('html/footer-portal.html')
+</div>
+@@include('html/modal.html',{})
+@@include('html/svg.html',{})
+<script src="app.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.search-failed{
+    margin-bottom: gem(96);
+    &__txt{
+        width: 100%;
+        padding-bottom: gem(16);
+        font-weight: 600;
+        font-size: gem(22);
+        line-height: gem(28);
+        min-height: gem(280);
+    }
+}

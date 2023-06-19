@@ -1,0 +1,25 @@
+.analytics{
+    padding-bottom: gem(70);
+    @media all and (max-width: 992px){
+        display: none;
+    }
+    .item{
+        padding: gem(20);
+        border: gem(1) solid $grey;
+        .image{
+            height: gem(130);
+            img{
+                object-fit: cover;
+            }
+        }
+        .descr{
+            font-weight: 600;
+            font-size: gem(16);
+            line-height: gem(24);
+            transition: color .035s linear;
+        }
+        &:hover{
+            color: $main-color
+        }
+    }
+}

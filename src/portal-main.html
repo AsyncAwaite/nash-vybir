@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Основна сторінка"
+})
+</head>
+<body>
+<div class="page-container">
+    @@include('html/header-portal.html')
+    <main>
+        @@include('html/portal-main/portal-main-promo.html')
+        @@include('html/portal-main/analytics.html')
+        @@include('html/portal-main/relevant.html')
+        @@include('html/portal-main/adviser.html')
+        @@include('html/portal-main/interview.html')
+    </main>
+    @@include('html/footer-portal.html')
+</div>
+@@include('html/modal.html',{})
+@@include('html/svg.html',{})
+<script src="app.min.js"></script>
+</body>
+</html>

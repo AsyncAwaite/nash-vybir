@@ -10,6 +10,8 @@
   text-align: center;
   color: $main-color;
   font-weight: 500;
+  margin-bottom: gem(18);
+  cursor: pointer;
   @media all and (max-width: 576px){
     padding: 0 gem(15);
   }

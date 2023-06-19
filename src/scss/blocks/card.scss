@@ -6,7 +6,6 @@
             color: $main-color;
         }
     }
-
     .image{
 
         width: 100%;
@@ -39,6 +38,9 @@
     .date{
         font-size: gem(14);
         line-height: gem(17);
+    }
+    &__bbn{
+        border-bottom: none;
     }
 
 

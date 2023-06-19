@@ -11,7 +11,10 @@
         font-weight: 600;
         font-size: gem(22);
         line-height: gem(28);
-        margin-bottom: gem(16);
+      
+        @media all and (max-width: 992px){
+            margin-bottom: gem(16);
+        }
 
     }
 }

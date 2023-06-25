@@ -1,4 +1,7 @@
 .f {
+  &_color-main{
+    color: $main-color;
+  }
 
   &-weight {
 
@@ -36,6 +39,14 @@
     &_24-25 {
       font-size: gem(24);
       line-height: gem(25);
+    }
+    &_26-50 {
+      font-size: gem(26);
+      line-height: gem(50);
+      @media (max-width: 576px){
+        font-size: gem(22);
+        line-height: gem(40);
+      }
     }
 
     &_34-41 {

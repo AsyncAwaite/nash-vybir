@@ -1,0 +1,97 @@
+.support-payu{
+    .container{
+        .subtitle{
+            font-weight: 600;
+            font-size: gem(22);
+            line-height: gem(27);
+            letter-spacing: 0.2em;
+            margin-bottom: gem(18);
+        }
+        .support-types{
+            display: flex;
+            @media all and (max-width: 992px){
+                flex-direction: column;
+            }
+            .support-type{
+                transition: all 0.35s linear;
+                display: block;
+                min-width: gem(190);
+                border: 1px solid $grey;
+                border-right: none;
+                font-weight: 600;
+                font-size: gem(18);
+                line-height: gem(22);
+                text-transform: uppercase;
+                position: relative;
+                @media all and (max-width: 992px){
+                    min-width: auto;
+                    margin-bottom: gem(12);
+                    width: 50%;
+                    height: gem(140);
+                    border: 1px solid $grey;
+
+                }
+                .flex{
+                    @media all and (max-width: 992px){
+                        & :first-child{
+                           
+                                margin-right: gem(12);
+                            }    
+                        }
+                }
+                &::before{
+                    content:"";
+                    position: absolute;
+                    z-index: 10;
+                    width: gem(1);
+                    top: gem(-1);
+                    right: gem(-1);
+                    bottom: gem(-1);
+                    background-color: $main-color;
+                    opacity: 0; 
+                    @media all and (max-width: 992px){
+                        content: none;
+                    }  
+                }
+                &:hover{
+                    border: 1px solid $main-color;
+                    border-right: none;
+                    background-color: $light-blue;
+                    color: $main-color;
+                    &::before{
+                        opacity: 1;
+                    }
+                    @media all and (max-width: 992px){
+                        border: 1px solid $grey;
+                        background-color: transparent;
+                        color: black;
+                    }
+                }
+                &.active{
+                    border: 1px solid $main-color;
+                    border-right: none;
+                    background-color: $light-grey;
+                    color: black;
+                    pointer-events: none;
+                    &::before{
+                        opacity: 1;
+                    }
+                    @media all and (max-width: 992px){
+                        border: 1px solid $main-color;
+                    }
+ 
+                }
+            }
+
+            .description{
+                display: none;
+                width: 100%;
+                padding: gem(20);
+                border: 1px solid $grey;
+                &.active{
+                    display: block;
+                    }
+                }
+        }
+    }
+}

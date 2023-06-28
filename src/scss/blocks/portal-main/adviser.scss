@@ -1,119 +1,141 @@
-.adviser{
-    .container{
-        .slider{
-            @media all and (max-width: 992px){
-                margin-bottom: gem(64);
-            }
-            .slider-item{
-                height: gem(470);
-                width: 100%;
-                position: relative;
-                padding: gem(29) gem(120) gem(29) gem(37);
-                font-weight: 600;
-                font-size: gem(36);
-                line-height: gem(50);
-                color: $white;
-                display: flex;
-                align-items: end;
-                &::before{
-                    content: "";
-                    position: absolute;
-                    z-index: 1;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-                }
-                @media all and (max-width: 992px){
-                    margin-bottom: gem(16);
-                }
-                @media all and (max-width: 576px){
-                    height: gem(420);
-                    width: 100vw;
-                    left: gem(-16);
-                    padding: gem(29) gem(16);
-                    font-weight: 600;
-                    font-size: gem(24);
-                    line-height: gem(34);
-                }
-                &__txt{
-                    z-index: 2;
-                }
-                .image{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                    img{
-                        object-fit: cover;
-                    }               
-                }
-            }
-            .nav{
-                border: gem(1) solid $grey;
-                padding: gem(22) gem(16);
-                width: 100%;
-                
-            }
-        }
-    .support-us{
-        &__description{
-            width: 100%;
-            border: gem(1) solid $grey;
-            padding: gem(56) 0 gem(52) gem(24);
-            @media all and (max-width: 576px){
-                padding: gem(27) gem(15) gem(35);
-            }
-            .title{
-                font-weight: 600;
-                font-size: gem(43);
-                line-height: gem(52);
-                margin-bottom: gem(31);
-            }
-            .subtitle{
-                font-weight: 500;
-                font-size: gem(16);
-                line-height: gem(22);
-            }
-        }
-        form{
-            border: gem(1) solid $grey;
-            border-top: none;
-            .inputs{  
-                input{
-                    border: none;
-                    border-left: gem(1) solid $grey;
-                    border-bottom: gem(1) solid $grey;
-                    padding: gem(26) 0;
-                    font-weight: 800;
-                    font-size: gem(14);
-                    line-height: gem(19);
-                    width: 100%;
-                    text-align: center;
-                    transition: all .35s linear;
-                    &:hover{
-                        background-color: $light-blue;
-                        color: $main-color;
-                    }
+.adviser {
 
-                    
-                }
-                & :first-child{
-                    border-left: none;
-                }
-            }
-            .btn{
-                display: block;
-                width: 100%;
-                height: gem(114);
-            }
+  .slider {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @media all and (max-width: 992px) {
+      margin-bottom: gem(64);
+    }
+    .swiper-slide, .swiper-wrapper{
+      height:auto;
+    }
+
+    &-item {
+      height: gem(470);
+      width: 100%;
+      position: relative;
+      padding: gem(30) gem(38);
+      font-weight: 600;
+      font-size: gem(36);
+      line-height: gem(50);
+      color: $white;
+      display: flex;
+      align-items: end;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+      }
+
+      @media all and (max-width: 992px) {
+        margin-bottom: gem(16);
+      }
+      @media all and (max-width: 576px) {
+        height: gem(420);
+        width: 100vw;
+        left: gem(-16);
+        padding: gem(29) gem(16);
+        font-weight: 600;
+        font-size: gem(24);
+        line-height: gem(34);
+      }
+
+      &__txt {
+        z-index: 2;
+        max-width: calc(100% - #{gem(70)});
+      }
+
+      .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+        img {
+          object-fit: cover;
         }
-}
+      }
+    }
 
-
+    .swiper-pagination {
+      border: gem(1) solid $grey;
+      width: 100%;
+      position: relative;
+      height: 100%;
+      bottom: 0;
 
     }
+  }
+
+  .support-us {
+    &__description {
+      width: 100%;
+      border: gem(1) solid $grey;
+      padding: gem(56) gem(24) gem(52);
+      @media all and (max-width: 576px) {
+        padding: gem(27) gem(15) gem(35);
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: gem(43);
+        line-height: gem(52);
+        margin-bottom: gem(31);
+      }
+
+      .subtitle {
+        font-weight: 500;
+        font-size: gem(16);
+        line-height: gem(22);
+      }
+    }
+
+    form {
+      border: gem(1) solid $grey;
+      border-top: none;
+
+      .inputs {
+        input {
+          border: none;
+          border-left: gem(1) solid $grey;
+          border-bottom: gem(1) solid $grey;
+          padding: gem(26) 0;
+          font-weight: 800;
+          font-size: gem(14);
+          line-height: gem(19);
+          width: 100%;
+          text-align: center;
+          transition: all .35s linear;
+
+          &:hover {
+            background-color: $light-blue;
+            color: $main-color;
+          }
+
+
+        }
+
+        & :first-child {
+          border-left: none;
+        }
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        height: gem(114);
+      }
+    }
+  }
+
 }

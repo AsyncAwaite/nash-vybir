@@ -70,6 +70,7 @@ class Form {
             link: location.href
         };
     }
+
     showSearchInput() {
         if (!this.search) return;
         const searchBtn = this.search.querySelector('.search-item__btn');
@@ -455,51 +456,60 @@ class Form {
             this.form.querySelectorAll('[data-form-date]').forEach(element => {
                 console.log(element)
             })
-            flatpickr(this.form.querySelector('[data-form-date]'), {
-                altInput: true,
-                altFormat: "d/m/Y",
-                dateFormat: "Y-m-d",
-                disableMobile: true,
-                monthSelectorType: 'static',
-                yearSelectorType: 'scroll',
-                minDate: "today",
-                static: true,
-                // locale: 'ru',
-                locale: "uk",
+            const calendarOptions =
+                {
+                    altInput: true,
+                    altFormat: "d/m/Y",
+                    dateFormat: "Y-m-d",
+                    disableMobile: true,
+                    monthSelectorType: 'static',
+                    yearSelectorType: 'scroll',
+                    minDate: "today",
+                    static: true,
+                    locale: "uk",
+                    // locale: "pl",
 
 
-                // locale: {
-                //     locale: 'uk',
-                //     firstDayOfWeek: 1 // 1 represents Monday
-                // },
-                // defaultDate: 'today',
-                // minDate: firstDayOfMonth,
-                // maxDate: lastDayOfMonth,
-                onReady: function (selectedDates, dateStr, instance) {
-                    console.log(this)
-                    // // Get all the calendar days
-                    // const days = instance.calendarContainer.querySelectorAll('.flatpickr-day');
+
+                    // locale: {
+                    //     locale: 'uk',
+                    //     firstDayOfWeek: 1 // 1 represents Monday
+                    // },
                     //
-                    // // Remove the "today" class from the current date
-                    // for (let i = 0; i < days.length; i++) {
-                    //     if (days[i].classList.contains('today')) {
-                    //         days[i].classList.remove('today');
-                    //         days[i].classList.add('selected');
-                    //     }
-                    // }
+                    // minDate: firstDayOfMonth,
+                    // maxDate: lastDayOfMonth,
+                    onReady: function (selectedDates, dateStr, instance) {
+                        console.log(this)
+                        // // Get all the calendar days
+                        // const days = instance.calendarContainer.querySelectorAll('.flatpickr-day');
+                        //
+                        // // Remove the "today" class from the current date
+                        // for (let i = 0; i < days.length; i++) {
+                        //     if (days[i].classList.contains('today')) {
+                        //         days[i].classList.remove('today');
+                        //         days[i].classList.add('selected');
+                        //     }
+                        // }
 
-                },
-                onChange: function (selectedDates, dateStr, instance) {
+                    },
+                    onChange: function (selectedDates, dateStr, instance) {
 
-                    // this._input.offsetParent.querySelector('.form-section').querySelector('[name="date"]').value = instance.calendarContainer.querySelector('.selected').ariaLabel;
-                    // const days = instance.calendarContainer.querySelectorAll('.flatpickr-day');
-                    // days.forEach(day => {
-                    //     if (day.classList.contains('today')) {
-                    //         day.classList.remove('today');
-                    //     }
-                    // })
+                        // this._input.offsetParent.querySelector('.form-section').querySelector('[name="date"]').value = instance.calendarContainer.querySelector('.selected').ariaLabel;
+                        // const days = instance.calendarContainer.querySelectorAll('.flatpickr-day');
+                        // days.forEach(day => {
+                        //     if (day.classList.contains('today')) {
+                        //         day.classList.remove('today');
+                        //     }
+                        // })
+                    }
                 }
-            });
+            if (this.date.dataset.inline && this.date.dataset.inline == 'true') {
+                calendarOptions.minDate = false;
+                calendarOptions.inline = true;
+                calendarOptions.defaultDate = 'today';
+            }
+            flatpickr(this.form.querySelector('[data-form-date]'), calendarOptions
+            );
             if (this.date.closest('.form__item').querySelector('[data-calendar-btn]')) {
 
                 this.date.closest('.form__item').querySelector('[data-calendar-btn]').addEventListener('click', () => {

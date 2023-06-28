@@ -1,0 +1,20 @@
+.swiper-pagination{
+  left: auto;
+  right: 0;
+  width: auto;
+  .swiper-pagination-bullet{
+    width: gem(8);
+    height: gem(8);
+    margin: 0 gem(6);
+    background-color: $main-color;
+    border-radius: gem(30);
+    opacity: 1;
+    transition: all .35s linear;
+    &:last-child{
+      margin-right: gem(20);
+    }
+    &-active{
+      width: gem(40);
+    }
+  }
+}

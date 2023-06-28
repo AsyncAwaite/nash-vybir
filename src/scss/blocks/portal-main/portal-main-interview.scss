@@ -1,38 +1,76 @@
-.portal-maine-interview{
-    .container{
-        .row{
-            .card{
-                border-bottom: none;
-                @media all and (max-width: 992px){
-                    border-bottom: gem(1) solid $grey;
-                }
-            }
-            @media all and (max-width: 992px){
-                padding-bottom: gem(16);
-            }
+.portal-maine-interview {
+  .swiper {
+    border: gem(1) solid $grey;
+
+    .swiper-slide {
+      .card {
+        border: none;
+        border-right: gem(1) solid $grey;
+      }
+
+      &-active {
+        .card {
+          @media (max-width: 767px) {
+            border-right: none;
+          }
         }
-        .nav{
-            border: gem(1) solid $grey;
-            width: 100%;
-            padding: gem(22) gem(16);
-        }
-        form{
-            width: 100%;
-            @media all and (max-width: 576px){
-                display: none;
-            }
-            .email{
-                display: block;
-                width: 100%;
-                color: $grey;
-                font-weight: 500;
-                border: gem(1) solid $grey;
-                border-right: none;
-                padding: gem(21) gem(24);
-                font-size: gem(18);
-                line-height: gem(22);
-            }
+      }
+
+      &-next {
+        .card {
+          @media all and (max-width: 992px) {
+            border-right: none;
+          }
         }
 
+        + div {
+          .card {
+            border-right: none;
+          }
+
+        }
+      }
     }
+  }
+
+  .card {
+    border-bottom: none;
+    @media all and (max-width: 992px) {
+      border-bottom: gem(1) solid $grey;
+    }
+  }
+
+  @media all and (max-width: 992px) {
+    padding-bottom: gem(16);
+  }
+
+  .swiper-pagination {
+    border-top: gem(1) solid $grey;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    bottom: 0;
+    height: gem(52);
+  }
+
+
+  form {
+    width: 100%;
+    @media all and (max-width: 576px) {
+      display: none;
+    }
+
+    .email {
+      display: block;
+      width: 100%;
+      color: $grey;
+      font-weight: 500;
+      border: gem(1) solid $grey;
+      border-right: none;
+      padding: gem(21) gem(24);
+      font-size: gem(18);
+      line-height: gem(22);
+    }
+  }
 }
+

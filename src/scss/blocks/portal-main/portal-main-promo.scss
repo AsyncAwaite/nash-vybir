@@ -1,198 +1,257 @@
-.portal-promo{
-    &__content{
-        @media all and (max-width: 992px){
-            flex-direction: column;
-        }
-    .latest-news{
-        width: gem(280);
-        padding: gem(24) gem(20);
-        border: gem(1) solid $grey;
-
-        @media all and (max-width: 992px){
-            width: 45%;
-        }
-        @media all and (max-width: 576px){
-            width: 100%;
-            border-bottom: none;
-        }
-        &__title{
-            line-height: gem(22);
-            font-weight: 600;
-            position: relative;
-            span{
-                position: absolute;
-                left: gem(-20);
-                color: red;
-                font-size: gem(10);
-                line-height: gem(22);
-            }
-        }
-        &__items{
-            .item{
-                display: block;
-                width: 100%;
-                border-bottom: gem(1) solid $light-grey;
-                padding: gem(9) 0;
-                &:hover{
-                    .description{
-                        color: $main-color;
-                    }
-                }
-                .date{
-                    font-size: gem(12);
-                    line-height: gem(22);
-                    color: $grey;
-                }
-                .description{
-                    font-size: gem(14);
-                    line-height: gem(22);
-                    transition: color .35s linear;
-                }
-            }
-            & :last-child{
-                border-bottom: none;
-                }
-            }       
-        }
-    }
-    &__wrapper{
-        .btn{
-            display: none;
-            @media all and (max-width: 576px){
-                display: flex;
-            }
-        }
-        
-        @media all and (max-width: 992px){
-            margin-bottom: gem(12);
-        } 
-        @media all and (max-width: 576px){
-            flex-direction: column;
-            margin-bottom: 0;
-        } 
+.portal-promo {
+  &__content {
+    @media all and (max-width: 992px) {
+      flex-direction: column;
     }
 
-    &__calendar{
-        width: gem(322);
-        border: gem(1) solid $grey;
-        border-left: none;
-        @media all and (max-width: 992px){
-            width: 55%;
-        }
-        @media all and (max-width: 576px){
-            width: 100%;
-            border-left: gem(1) solid $grey;
-        }
-        .calendar{
-            height: gem(335);
-            border-bottom: gem(1) solid $grey;
-        }
-        .calendar__event{
-            border: none;
-            padding: gem(24) gem(21) gem(42);
+    .latest-news {
+      width: gem(280);
+      padding: gem(24) gem(20);
+      border: gem(1) solid $grey;
 
-            .image{
-                height: gem(180);
-            }
-            .event__category{
-                margin-top: gem(6);
-                font-size: gem(12);
-                line-height: gem(22);
-                letter-spacing: 0.2em;
-                color: $grey;
-            }
-            .event__title{
-                font-weight: 800;
-                font-size: gem(14);
-                line-height: gem(20);
-                text-transform: none;
-               
-            }
-        }
-    }
-    .slider{
-        padding: gem(38) gem(21) gem(21) gem(30);
-        border: gem(1) solid $grey;
-        border-left: none;
+      @media all and (max-width: 992px) {
+        width: 45%;
+      }
+      @media all and (max-width: 576px) {
         width: 100%;
+        border-bottom: none;
+      }
+
+      &__title {
+        line-height: gem(22);
+        font-weight: 600;
         position: relative;
+
+        span {
+          position: absolute;
+          left: gem(-20);
+          color: red;
+          font-size: gem(10);
+          line-height: gem(22);
+        }
+      }
+
+      &__items {
+        .item {
+          display: block;
+          width: 100%;
+          border-bottom: gem(1) solid $light-grey;
+          padding: gem(9) 0;
+
+          &:hover {
+            .description {
+              color: $main-color;
+            }
+          }
+
+          .date {
+            font-size: gem(12);
+            line-height: gem(22);
+            color: $grey;
+          }
+
+          .description {
+            font-size: gem(14);
+            line-height: gem(22);
+            transition: color .35s linear;
+          }
+        }
+
+        & :last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    .btn {
+      display: none;
+      @media all and (max-width: 576px) {
+        display: flex;
+      }
+    }
+
+    @media all and (max-width: 992px) {
+      margin-bottom: gem(12);
+    }
+    @media all and (max-width: 576px) {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+  }
+
+  &__calendar {
+    width: gem(322);
+    border: gem(1) solid $grey;
+    border-left: none;
+    @media all and (max-width: 992px) {
+      width: 55%;
+    }
+    @media all and (max-width: 576px) {
+      width: 100%;
+      border-left: gem(1) solid $grey;
+    }
+
+    .calendar {
+      height: gem(335);
+      border: none;
+
+      padding: 0;
+
+      .form {
+        &__item {
+          margin-bottom: 0;
+
+        }
+      }
+
+      .flatpickr-calendar.inline {
+        top: 0;
+        border: none;
+        border-bottom: gem(1) solid $grey;
+      }
+
+      .flatpickr-months .flatpickr-prev-month {
+        left: 0.12rem !important;
         @media all and (max-width: 992px){
-            border-left: gem(1) solid $grey;
-            height: gem(632);
+          left: 0.32rem !important;
         }
         @media all and (max-width: 576px){
-            padding: gem(30) gem(15) gem(21);
-            height: gem(408);
-            border-top: none;
+          left: 0.12rem !important;
         }
-        &::before{
-            content: "";
-            position: absolute;
-            width: 100%;
-            background-color: $grey;
-            height: gem(1);
-            bottom: gem(50);
-            left: 0;
+      }
 
+      .flatpickr-months .flatpickr-next-month {
+        left: 1.22rem;
+        @media all and (max-width: 992px){
+          left: 1.32rem;
         }
-        &__item{
-            .category{
-                font-weight: 600;
-                font-size: gem(18);
-                line-height: gem(22);
-                color: $grey;
-                text-transform: uppercase;
-                margin-bottom: gem(24);
-                @media all and (max-width: 576px){
-                    font-size: gem(12);
-                    line-height: gem(22);
-                    margin-bottom: gem(24);
-                    letter-spacing: 0.2em;
-                }
-            }
-            .title{
-
-                font-weight: 600;
-                font-size: gem(56);
-                line-height: gem(68);
-                margin-bottom: gem(134);
-                @media all and (max-width: 576px){
-                    font-size: gem(36);
-                    line-height: gem(46);
-                    margin-bottom: gem(30);
-
-
-                }
-            }
-            .participants{
-                font-weight: 600;
-                font-size: gem(18);
-                line-height: gem(29);
-                letter-spacing: 0.2em;
-                text-transform: uppercase;
-                color: $grey;
-                width: 65%;
-                @media all and (max-width: 576px){
-                    font-size: gem(12);
-                    line-height: gem(22);
-                    width: 100%;
-
-                }
-            }
-
+        @media all and (max-width: 576px){
+          left: 1.22rem;
         }
+      }
     }
+
+    .calendar__event {
+      border: none;
+      padding: gem(24) gem(20) gem(42);
+
+      .image {
+        height: gem(180);
+      }
+
+      .event__category {
+        margin-top: gem(6);
+        font-size: gem(12);
+        line-height: gem(22);
+        letter-spacing: 0.2em;
+        color: $grey;
+      }
+
+      .event__title {
+        font-weight: 800;
+        font-size: gem(14);
+        line-height: gem(20);
+        text-transform: none;
+
+      }
+    }
+  }
+
+  .slider {
+
+    border: gem(1) solid $grey;
+    border-left: none;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    @media all and (max-width: 992px) {
+      border-left: gem(1) solid $grey;
+      height: gem(632);
+    }
+    @media all and (max-width: 576px) {
+      height: gem(408);
+      border-top: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      background-color: $grey;
+      height: gem(1);
+      bottom: gem(50);
+      left: 0;
+
+    }
+
+    &__item {
+      padding: gem(38) gem(20)  gem(30);
+      @media all and (max-width: 576px){
+        padding: gem(30) gem(15) gem(20);
+      }
+      .category {
+        font-weight: 600;
+        font-size: gem(18);
+        line-height: gem(22);
+        color: $grey;
+        text-transform: uppercase;
+        margin-bottom: gem(24);
+        @media all and (max-width: 576px) {
+          font-size: gem(12);
+          line-height: gem(22);
+          margin-bottom: gem(24);
+          letter-spacing: 0.2em;
+        }
+      }
+
+      .title {
+
+        font-weight: 600;
+        font-size: gem(56);
+        line-height: gem(68);
+        margin-bottom: gem(134);
+        @media all and (max-width: 576px) {
+          font-size: gem(36);
+          line-height: gem(46);
+          margin-bottom: gem(30);
+
+
+        }
+      }
+
+      .participants {
+        font-weight: 600;
+        font-size: gem(18);
+        line-height: gem(29);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $grey;
+        width: 65%;
+        @media all and (max-width: 576px) {
+          font-size: gem(12);
+          line-height: gem(22);
+          width: 100%;
+
+        }
+      }
+
+    }
+
+  }
 }
-.more{
-    font-weight: 700;
-    font-size: gem(16);
-    line-height: gem(19);
-    color: $main-color;
-    @media all and (max-width: 576px){
-        display: none;
-    }
 
-    &:hover{
+.more {
+  font-weight: 700;
+  font-size: gem(16);
+  line-height: gem(19);
+  color: $main-color;
+  @media all and (max-width: 576px) {
+    display: none;
+  }
+
+  &:hover {
     color: $grey;
-    }
+  }
 }

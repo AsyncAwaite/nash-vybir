@@ -13,7 +13,6 @@ class Modal {
         document.body.classList.add("active");
         this.attachModalEvents(this.modal);
     }
-
     attachModalEvents() {
         if (this.modal.querySelector(".modal__close")) {
             this.modal

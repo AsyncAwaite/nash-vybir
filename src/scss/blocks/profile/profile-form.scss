@@ -1,0 +1,36 @@
+.profile-form {
+  .form {
+    padding: 0;
+
+    input, .btn {
+      height: gem(48);
+    }
+    &-contact {
+      max-width: gem(420);
+      @media all and (max-width: 992px) {
+        max-width: 100%;
+        margin-bottom: gem(20);
+      }
+    }
+
+    &-subscribe {
+      .btn {
+        max-width: gem(280);
+      }
+
+      .form__input {
+        flex: 1 0 auto;
+      }
+
+      .flex {
+        @media all and (max-width: 576px) {
+          flex-direction: column;
+          .btn {
+            max-width: 100%;
+          }
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.interview-interactive{
+    .lincs{
+        .tag{
+            @media all and (max-width: 576px){
+                margin-bottom: gem(16);
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .social{
+            @media all and (max-width: 576px){
+                display: flex;
+                justify-content: end;
+                align-items: center;
+            }
+            a{
+                &:hover{
+                    color: $main-color;
+                }
+                @media all and (max-width: 576px){
+                    margin-bottom: gem(16);
+                }
+            }
+    
+        }
+    }
+    .telegram-bot{
+        height: gem(96);
+        display: flex;
+        @media all and (max-width: 576px){
+            flex-direction: column;
+            height: auto;
+        }
+        .descr{
+            height: 100%;
+            width: 100%;
+            padding: 0 gem(40) ;
+            border: gem(2) solid $main-color;
+            border-right: none;
+            font-weight: 700;
+            font-size: gem(36);
+            line-height: gem(96);
+            color: $main-color;
+            @media all and (max-width: 992px){
+                font-size: gem(26);
+                line-height: gem(48);
+            }
+            @media all and (max-width: 576px){
+                border: gem(2) solid $main-color;
+                border-bottom: none;
+                font-size: gem(16);
+                line-height: gem(18);
+                padding: gem(30) gem(10) ;  
+            }
+        }
+        .btn{
+            height: 100%;
+            @media all and (max-width: 576px){
+                font-size: gem(14);
+                height: gem(96);
+                width: 100%;
+            }
+    
+        }
+    }
+}
+

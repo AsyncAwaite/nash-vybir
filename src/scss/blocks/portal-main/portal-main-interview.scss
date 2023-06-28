@@ -1,0 +1,38 @@
+.portal-maine-interview{
+    .container{
+        .row{
+            .card{
+                border-bottom: none;
+                @media all and (max-width: 992px){
+                    border-bottom: gem(1) solid $grey;
+                }
+            }
+            @media all and (max-width: 992px){
+                padding-bottom: gem(16);
+            }
+        }
+        .nav{
+            border: gem(1) solid $grey;
+            width: 100%;
+            padding: gem(22) gem(16);
+        }
+        form{
+            width: 100%;
+            @media all and (max-width: 576px){
+                display: none;
+            }
+            .email{
+                display: block;
+                width: 100%;
+                color: $grey;
+                font-weight: 500;
+                border: gem(1) solid $grey;
+                border-right: none;
+                padding: gem(21) gem(24);
+                font-size: gem(18);
+                line-height: gem(22);
+            }
+        }
+
+    }
+}

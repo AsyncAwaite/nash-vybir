@@ -21,20 +21,32 @@
   &_16{
     margin-bottom: gem(16);
   }
+  &_26{
+    margin-bottom: gem(26);
+  }
   &_32{
     margin-bottom: gem(32);
   }
   &_40{
     margin-bottom: gem(40);
   }
+  &_48{
+    margin-bottom: gem(48);
+  }
   &_20{
     margin-bottom: gem(20);
+  }
+  &_96{
+    margin-bottom: gem(96);
   }
 }
 
 .ml {
   &_24 {
     margin-left: gem(24);
+  }
+  &_12 {
+    margin-left: gem(12);
   }
 }
 
@@ -46,5 +58,13 @@
 .mx{
   margin-left: auto;
   margin-right: auto;
+}
+.pb{
+  &_70{
+    padding-bottom: gem(70);
+  }
+  &_96{
+    padding-bottom: gem(96);
+  }
 }
 

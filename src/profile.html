@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Особистий кабінет"
+})
+</head>
+<body>
+<div class="page-container">
+    @@include('html/header-portal.html')
+    <main>
+        @@include('html/profile/profile-form.html')
+        @@include('html/profile/my-ads.html')
+        @@include('html/event-page/recommended.html')
+
+    </main>
+    @@include('html/footer-portal.html')
+</div>
+@@include('html/modal.html',{})
+@@include('html/svg.html',{})
+<script src="app.min.js"></script>
+</body>
+</html>

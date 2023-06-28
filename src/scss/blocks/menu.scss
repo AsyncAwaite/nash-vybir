@@ -5,10 +5,7 @@
   transition: all .35s linear;
 
   &__item {
-
     cursor: pointer;
-
-
   }
 
   &__link, &__submenu {
@@ -46,7 +43,6 @@
     }
 
   }
-
   &-submenu {
     top: 100%;
     width: 100%;

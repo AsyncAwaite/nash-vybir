@@ -39,6 +39,10 @@ window.addEventListener("DOMContentLoaded", () => {
             new Form('.form-search-event').init();
 
         }
+        if (getElement('.form-calendar')) {
+            new Form('.form-calendar').init();
+
+        }
         if (getElement('.form-search')) {
             new Form('.form-search').init();
 

@@ -10,6 +10,7 @@
   text-align: center;
   color: $main-color;
   font-weight: 500;
+  cursor: pointer;
   @media all and (max-width: 576px){
     padding: 0 gem(15);
   }
@@ -21,5 +22,11 @@
   }
   &_l{
     height: gem(50);
+  }
+  &.disable{
+    cursor:auto;
+    &:hover{
+      background-color: transparent;
+    }
   }
 }

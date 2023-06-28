@@ -26,11 +26,18 @@
         }
     }
     .telegram-bot{
-        padding-left: gem(40);
-        border: gem(2) solid $main-color;
+        height: gem(96);
+        display: flex;
         @media all and (max-width: 576px){
-            padding-left: gem(15);}
+            flex-direction: column;
+            height: auto;
+        }
         .descr{
+            height: 100%;
+            width: 100%;
+            padding: 0 gem(40) ;
+            border: gem(2) solid $main-color;
+            border-right: none;
             font-weight: 700;
             font-size: gem(36);
             line-height: gem(96);
@@ -40,15 +47,19 @@
                 line-height: gem(48);
             }
             @media all and (max-width: 576px){
-                font-size: gem(14);
-                line-height: gem(18);  
+                border: gem(2) solid $main-color;
+                border-bottom: none;
+                font-size: gem(16);
+                line-height: gem(18);
+                padding: gem(30) gem(10) ;  
             }
         }
         .btn{
-            height: gem(96);
+            height: 100%;
             @media all and (max-width: 576px){
                 font-size: gem(14);
-                height: gem(64);
+                height: gem(96);
+                width: 100%;
             }
     
         }

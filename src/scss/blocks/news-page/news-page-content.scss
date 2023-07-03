@@ -44,3 +44,17 @@
     }
 
 }
+.banner{
+    display: block;
+    width: 100%;
+    height: gem(70);
+    background-color: $grey;
+    text-align: center;
+    &-futter{
+        height: gem(156);
+        margin-bottom: gem(136);
+        @media all and (max-width: 576px){
+            margin-bottom: gem(96);
+        }
+    }
+}

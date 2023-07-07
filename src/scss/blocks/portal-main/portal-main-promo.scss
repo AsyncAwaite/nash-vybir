@@ -26,7 +26,7 @@
           position: absolute;
           left: gem(-20);
           color: red;
-          font-size: gem(10);
+          font-size: gem(14);
           line-height: gem(22);
         }
       }
@@ -109,7 +109,7 @@
       .flatpickr-calendar.inline {
         top: 0;
         border: none;
-        border-bottom: gem(1) solid $grey;
+       
       }
 
       .flatpickr-months .flatpickr-prev-month {
@@ -135,6 +135,8 @@
 
     .calendar__event {
       border: none;
+      border-top: gem(1) solid $grey;
+
       padding: gem(24) gem(20) gem(42);
 
       .image {

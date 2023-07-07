@@ -15,7 +15,6 @@
           }
         }
       }
-
       &-next {
         .card {
           @media all and (max-width: 992px) {
@@ -70,6 +69,7 @@
       padding: gem(21) gem(24);
       font-size: gem(18);
       line-height: gem(22);
+      outline: none;
     }
   }
 }

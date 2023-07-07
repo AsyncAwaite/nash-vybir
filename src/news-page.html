@@ -5,11 +5,22 @@
         })
         <body>
         <div class="page-container">
+            <div class="container">
+                <a href="#" class="banner banner-header">
+                    Banner
+                </a>
+            </div>
+
             @@include('html/header-portal.html')
             <main>
                 @@include('html/news-page/news-page-promo.html')
                 @@include('html/news-page/news-page-content.html')
             </main>
+            <div class="container">
+                <a href="#" class=" banner banner-futter">
+                    Banner
+                </a>
+            </div>
             @@include('html/footer-portal.html')
         </div>
         @@include('html/modal.html',{})

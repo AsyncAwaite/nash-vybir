@@ -17,7 +17,7 @@ function getLatLongFromUrl(url) {
 async function getAddressFromCoordinates(options) {
     const {language, longitude, latitude} = options
     let result = {};
-    const apiKey = 'AIzaSyAAvE2wXrGOQa5s0Jl6gSLIuDg6a7luNk8'
+    const apiKey = ''
     const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&result_type=country|locality&language=${language}&key=${apiKey}`;
     try {
         const response = await fetch(apiUrl);

@@ -12,7 +12,6 @@ export default function dropdown() {
             const activeItem = dropdown.querySelector('.dropdown__active')
             dropdown.querySelectorAll('.dropdown__item').forEach(dropdownItem => {
                 dropdownItem.addEventListener('click', () => {
-                    console.log('click')
                     removeActive(dropdown.querySelectorAll('.dropdown__item'));
                     dropdownItem.classList.add('active');
                     activeItem.innerHTML = dropdownItem.innerHTML;

@@ -1,91 +1,180 @@
 const translateFields = {
     field: {
-        en: "This field is required",
-        ua: "Поле обов'язкове для заповнення",
-        ru:"Поле обязательное для заполнения",
+        pl: "This field is required",
+        uk: "Поле обов'язкове для заповнення",
     },
     template: {
-        en: "Fill in according to the template",
-        ua: "Заповніть відповідно до шаблону",
-        ru:"Заполните согласно шаблона",
-    },
-    send: {
-        en: "Submit",
-        ua: "Надіслати",
-        ru:"Отправить",
-    },
-    validateName:{
-        en: "Input your name",
-        ua: `Введіть ваше ім’я`,
-        ru: "Введите ваше имя",
+        pl: "Fill in according to the template",
+        uk: "Заповніть відповідно до шаблону",
     },
     name: {
-        en: "Your name",
-        ua: `Ваше ім’я`,
-        ru:"Ваше имя",
+        pl: "",
+        uk: "",
     },
+    send: {
+        pl: "Submit",
+        uk: "Надіслати",
+    },
+
     email: {
-        en: " Fill in according to the template - test@gmail.com",
-        ua: `Ваше ім’я`,
-        ru:"Ваше имя",
+        pl: " Fill in according to the template - test@gmail.com",
+        uk: `Заповніть згідно до шаблону - test@gmail.com`,
     },
     phone: {
-        en: "Tel",
-        ua: `Номер`,
-        ru:"Номер",
+        pl: "Tel",
+        uk: `Номер`,
     },
     formTitle: {
-        en: "Fill out the form",
-        ua: `Заповніть форму`,
-        ru:"Заполните форму",
+        pl: "Fill out the form",
+        uk: `Заповніть форму`,
     },
     formSubtitle: {
-        en: "And I will contact you shortly to discuss the details.",
-        ua: `І я зв’яжусь з вами найближчим часом для обговорення деталей.`,
-        ru:"И я свяжусь с вами в ближайшее время, чтобы обговорить детали.",
+        pl: "And I will contact you shortly to discuss the details.",
+        uk: `І я зв’яжусь з вами найближчим часом для обговорення деталей.`,
     },
-    formPolicy: {
-        en: `I respect confidentiality, so we must sign a <a href="/contract"  target="_blank"  class="text-color__accent f-weight--700">contract</a> before starting therapy`,
-        ua: `Я поважаю конфіденційність, тому перед початком терапії ми повинні заключити <a href="/contract"  target="_blank"  class="text-color__accent f-weight--700">контракт</a>`,
-        ru:`Я уважаю конфиденциальность, поэтому перед началом терапии мы должны заключить <a href=\"/contract\"  target=\"_blank\"  class=\"text-color__accent f-weight--700\">контракт</a>`,
+    password: {
+        pl: "Пароль має бути довший ніж 6 символів",
+        uk: `Пароль має бути довший ніж 6 символів`,
+
     },
+    passwordRepeat: {
+        pl: "Паролі мають співпадати!",
+        uk: `Паролі мають співпадати!`,
+
+    },
+
     message: {
-        en: "Message",
-        ua: `Повідомлення`,
-        ru:"Сообщение",
+        pl: "Message",
+        uk: `Повідомлення`,
     },
     formSuccessTitle: {
-        en: "Thank you!",
-        ua: 'Дякуємо!',
-        ru:"Спасибо!",
+        pl: "Thank you!",
+        uk: 'Дякуємо!',
     },
+    formSuccessEventText: {},
     formSuccessText: {
-        en: "We will contact you soon",
-        ua: 'Зв\'яжемося з вами найближчим часом',
-        ru:"Свяжемся с вами в ближайшее время",
+        pl: "We will contact you soon",
+        uk: 'Ваша подія відправлена на модерацію!',
     },
     formErrorTitle: {
-        en: "Oops...",
-        ua: 'Упс...',
-        ru:"Упс...",
+        pl: "Oops...",
+        uk: 'Упс...',
     },
     formErrorText: {
-        en: "An error occurred! Try it later!",
-        ua: 'Виникла помилка! Спробуйте пізніше!',
-        ru:"Возникла ошибка! Попробуйте позже!",
+        pl: "An error occurred! Try it later!",
+        uk: 'Виникла помилка! Спробуйте пізніше!',
     },
 
     thankTitle: {
-        en: "Дякуємо, ми зв'яжемося з Вами найближчим часом!",
-        ua: "Дякуємо, ми зв'яжемося з Вами найближчим часом!",
+        pl: "Дякуємо, ми зв'яжемося з Вами найближчим часом!",
+        uk: "Дякуємо, ми зв'яжемося з Вами найближчим часом!",
     },
 };
-let lang = 'ua';
-if (document.documentElement.lang.includes('en')) {
-    lang = 'en';
+let lang = 'uk';
+if (document.documentElement.lang.includes('pl')) {
+    lang = 'pl';
 }
-if (document.documentElement.lang.includes('ru')) {
-    lang = 'ru';
-}
-let certificates = null;
-export {translateFields,lang, certificates}
+
+const categories = [
+    {
+        uk: 'Освіта',
+        pl: 'Edukacja',
+        slug: 'education'
+    },
+    {
+        uk: 'Музика',
+        pl: 'Muzyka',
+        slug: 'music'
+    }, {
+        uk: 'Кіно',
+        pl: 'Kino',
+        slug: 'cinema'
+    }, {
+        uk: 'Театр',
+        pl: 'Teatr',
+        slug: 'theater'
+    }, {
+        uk: 'Музеї',
+        pl: 'Muzea',
+        slug: 'museum'
+    }, {
+        uk: 'Майстер-класи',
+        pl: 'Warsztaty',
+        slug: 'master-classes'
+    }, {
+        uk: 'Екскурсії',
+        pl: 'Wycieczki',
+        slug: 'excursions'
+    }, {
+        uk: 'Для дітей',
+        pl: 'Dla dzieci',
+        slug: 'children'
+    }, {
+        uk: 'Для підлітків',
+        pl: 'Dla nastolatków',
+        slug: 'teenagers'
+    }, {
+        uk: 'Для всієї родини',
+        pl: 'Dla całej rodziny',
+        slug: 'family'
+    }, {
+        uk: 'Для жінок',
+        pl: 'Dla kobiet',
+        slug: 'women'
+    }, {
+        uk: 'Для сеньйорів',
+        pl: 'Dla seniorów',
+        slug: 'seniors'
+    }, {
+        uk: 'Консультації',
+        pl: 'Konsultacji',
+        slug: 'consultations'
+    },{
+        uk: 'Психологія',
+        pl: 'Psychologia',
+        slug: 'psychology'
+    },{
+        uk: 'Легалізація',
+        pl: 'Legalizacja',
+        slug: 'legalization'
+    },{
+        uk: 'Інтеграція',
+        pl: 'Integracja',
+        slug: 'integration'
+    },{
+        uk: 'Ігри',
+        pl: 'Gry',
+        slug: 'games'
+    },{
+        uk: 'Робота',
+        pl: 'Praca',
+        slug: 'work'
+    },{
+        uk: 'Лекції',
+        pl: 'Wykłady',
+        slug: 'lectures'
+    },{
+        uk: 'Спорт',
+        pl: 'Sport',
+        slug: 'sport'
+    },{
+        uk: 'Концерт',
+        pl: 'Koncerty',
+        slug: 'concert'
+    },{
+        uk: 'Вечірки',
+        pl: 'Imprezy',
+        slug: 'parties'
+    },{
+        uk: 'Зустрічі',
+        pl: 'Spotkania',
+        slug: 'meetings'
+    },{
+        uk: 'Інше',
+        pl: 'Inne',
+        slug: 'other'
+    },
+
+]
+
+export {translateFields, lang, categories}

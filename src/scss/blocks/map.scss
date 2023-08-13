@@ -1,0 +1,72 @@
+.map {
+  position: relative;
+  overflow: hidden;
+
+  #map {
+    height: gem(420);
+  }
+
+  &__info {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    max-width: gem(320);
+    height: auto;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #808080;
+    transition: transform .35s linear;
+    transform: translateX(-100%);
+
+    &.active {
+      transform: translateX(0);
+    }
+
+  }
+
+  &__content {
+    //padding: gem(24);
+
+    position: relative;
+    z-index: 1;
+
+    .info {
+      padding: gem(24);
+flex-grow: 1;
+    }
+
+    .title {
+      font-size: gem(18);
+      line-height: gem(24);
+    }
+
+    .date {
+      font-size: gem(12);
+      line-height: gem(14);
+      color: #808080;
+    }
+
+    .link {
+      width: gem(115);
+      flex-shrink: 0;
+      //padding: gem(24);
+      border: 0;
+      font-size: gem(62);
+      line-height: gem(62);
+      position: relative;
+      color: $main-color;
+
+      &::before {
+        width: gem(1);
+        height: 100%;
+        top: 0;
+        left: 0;
+        content: '';
+        position: absolute;
+        background-color: #808080;
+      }
+
+    }
+  }
+}

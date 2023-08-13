@@ -1,89 +1,98 @@
-.events{
-        padding-bottom: gem(278);
-    
-&__container{
+.events {
+  padding-bottom: gem(278);
+
+  &__container {
     margin-top: gem(24);
-    border-top: gem(1) solid $grey;
-    border-left: gem(1) solid $grey;
+
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    @media all and (max-width: 992px){
-        grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(gem(287), auto);
+    @media all and (max-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
     }
-   @media all and (max-width: 576px){
-       grid-template-columns:  1fr;
-   }
-
-    .event{
-        &:first-child{
-            grid-column: 1/3;
-            grid-row: 1/3;
-            @media all and (max-width: 576px){
-                grid-column: 1/2;
-                grid-row: 1/2;
-            }
-            .image{
-                height: gem(395);
-                @media all and (max-width: 576px){
-                    height: gem(200);
-                }
-            }
-            .event__date{
-                line-height: gem(45);
-                font-size: gem(18);
-    
-            }
-            .event__title{
-                font-size: gem(36);
-                line-height: gem(41);
-                @media all and (max-width: 576px){
-                    font-size: gem(28);
-                    line-height: gem(32);
-                }
-    
-                span{
-                    margin-left: gem(30);
-                    font-size: gem(47);
-                    color: red;
-                    display: inline-block;
-                    @media all and (max-width: 576px){
-                        display: none;
-                    }
-                }
-                
-            }
-     
-    
-        }
-        &:nth-child(2),
-        &:nth-child(3){
-            grid-column: 3/5;
-            @media all and (max-width: 992px){
-                grid-column: 3/4;
-            }
-            @media all and (max-width: 576px){
-                grid-column: 1/2;
-            }
-    
-    
-        }
-        &:nth-child(4){
-            grid-row: 3/5;
-            .image{
-                height: gem(395);
-            }
-            @media all and (max-width: 576px){
-    
-                grid-row: 5/6;
-                .image{
-                    height: gem(200);
-                }
-            }
-    
-        }
-
+    @media all and (max-width: 576px) {
+      grid-template-columns:  1fr;
     }
 
-}
+    .event {
+      display: flex;
+      flex-direction: column;
+
+      box-shadow: 0 0 0 gem(1) rgba($grey, .7);
+      border: gem(.5) solid rgba($grey, .7);
+
+      .image {
+        flex-grow: 1;
+      }
+
+      &:first-child {
+        grid-column: 1/3;
+        grid-row: 1/3;
+        @media all and (max-width: 576px) {
+          grid-column: 1/2;
+          grid-row: 1/2;
+        }
+
+        .image {
+          height: gem(395);
+          @media all and (max-width: 576px) {
+            height: gem(200);
+          }
+        }
+
+        .event__date {
+          line-height: gem(45);
+          font-size: gem(18);
+
+        }
+
+        .event__title {
+          font-size: gem(36);
+          line-height: gem(41);
+          @media all and (max-width: 576px) {
+            font-size: gem(28);
+            line-height: gem(32);
+          }
+
+          span {
+            margin-left: gem(30);
+            font-size: gem(47);
+            color: red;
+            display: inline-block;
+            @media all and (max-width: 576px) {
+              display: none;
+            }
+          }
+
+        }
+
+
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        grid-column: 3/5;
+        @media all and (max-width: 992px) {
+          grid-column: 3/4;
+        }
+        @media all and (max-width: 576px) {
+          grid-column: 1/2;
+        }
+
+
+      }
+
+      //&:nth-child(4) {
+      //  grid-row: 3/5;
+      //  @media all and (max-width: 576px) {
+      //    grid-row: 5/6;
+      //  }
+      //
+      //}
+
+    }
+
+  }
 
 }

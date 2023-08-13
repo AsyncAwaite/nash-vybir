@@ -1,14 +1,14 @@
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?xazzz5');
-  src:  url('fonts/icomoon.eot?xazzz5#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?xazzz5') format('truetype'),
-    url('fonts/icomoon.woff?xazzz5') format('woff'),
-    url('fonts/icomoon.svg?xazzz5#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
+//@font-face {
+//  font-family: 'icomoon';
+//  src:  url('fonts/icomoon.eot?xazzz5');
+//  src:  url('fonts/icomoon.eot?xazzz5#iefix') format('embedded-opentype'),
+//    url('fonts/icomoon.ttf?xazzz5') format('truetype'),
+//    url('fonts/icomoon.woff?xazzz5') format('woff'),
+//    url('fonts/icomoon.svg?xazzz5#icomoon') format('svg');
+//  font-weight: normal;
+//  font-style: normal;
+//  font-display: block;
+//}
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -28,84 +28,120 @@
 .icon-arrow:before {
   content: "\e900";
 }
+
 .icon-attach:before {
   content: "\e901";
 }
+
 .icon-calendar:before {
   content: "\e902";
 }
+
 .icon-camera:before {
   content: "\e903";
 }
+
 .icon-check-mark:before {
-  content: "\e904";
-}
-.icon-chek:before {
+
   content: "\e905";
 }
+
+.icon-check:before {
+  content: "\e904";
+}
+
 .icon-cross:before {
   content: "\e906";
 }
+
 .icon-diamond:before {
   content: "\e907";
 }
+
 .icon-down:before {
   content: "\e908";
 }
+
 .icon-edit:before {
   content: "\e909";
 }
+
 .icon-eye:before {
   content: "\e90a";
 }
+
 .icon-facebook:before {
   content: "\e90b";
 }
+
 .icon-fire:before {
   content: "\e90c";
 }
+
 .icon-fire-big:before {
   content: "\e90d";
 }
+
 .icon-instagram:before {
   content: "\e90e";
 }
+
 .icon-link:before {
   content: "\e90f";
 }
+
 .icon-linkedin:before {
   content: "\e910";
 }
+
 .icon-log-in:before {
   content: "\e911";
 }
+
+.icon-log-out {
+  transform: scale(-1, 1);
+
+  &::before {
+    content: "\e911";
+  }
+}
+
 .icon-map:before {
   content: "\e912";
 }
+
 .icon-menu:before {
   content: "\e913";
 }
+
 .icon-search:before {
   content: "\e914";
 }
+
 .icon-tag:before {
   content: "\e915";
 }
+
 .icon-telegram:before {
   content: "\e916";
 }
+
 .icon-tumblr:before {
   content: "\e917";
 }
+
 .icon-twitter:before {
   content: "\e918";
 }
+
 .icon-user:before {
   content: "\e919";
 }
+
 .icon-viber:before {
   content: "\e91a";
 }
+
 .icon-youtube:before {
   content: "\e91b";
 }

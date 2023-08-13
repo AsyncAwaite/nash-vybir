@@ -14,13 +14,14 @@ class Modal {
         this.attachModalEvents(this.modal);
     }
     attachModalEvents() {
-        if (this.modal.querySelector(".modal__close")) {
+        if (this.modal.querySelector(".modal__close") ) {
             this.modal
                 .querySelectorAll(".modal__close").forEach(closeBtn => {
                 closeBtn.addEventListener("click", () => {
                     this.closeModal(this.modal);
                 });
             })
+
 
         }
 
@@ -53,13 +54,14 @@ class Modal {
 
     detachModalEvents() {
 
-        if (this.modal.querySelector(".modal__close")) {
+        if (this.modal.querySelector(".modal__close")  ) {
             this.modal
                 .querySelectorAll(".modal__close").forEach(closeBtn => {
                 closeBtn.removeEventListener("click", () => {
                     this.closeModal(this.modal);
                 });
             });
+
         }
         document.removeEventListener("keydown", (e) => {
             this.handleEscape(e);

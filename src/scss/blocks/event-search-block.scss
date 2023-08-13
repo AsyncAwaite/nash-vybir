@@ -95,6 +95,72 @@
 
         .icon-close {
           width: 100%;
+
+        }
+
+        .icon-cross {
+          left: auto;
+          position: absolute;
+          right: gem(-10);
+          cursor: pointer;
+          transition: all .3s linear;
+          opacity: 0;
+          visibility: hidden;
+          transition: all .35s linear;
+          &:hover{
+            color: $main-color;
+          }
+          &.visible{
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        .form__input {
+          input {
+            border: none;
+            padding: 0 gem(10) 0 0 !important;
+
+            &:hover {
+              background: transparent;
+            }
+          }
+        }
+
+
+      }
+
+      + .place__answer {
+        top: calc(100% + .01rem);
+        border: gem(1) solid $grey;
+        background-color: #fff;
+        min-height: gem(50);
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: auto;
+        padding: gem(15) gem(20);
+        width: gem(303);
+        opacity: 0;
+        visibility: hidden;
+        transition: all .35s linear;
+        @media all and (max-width: 576px) {
+          width: gem(293);
+        }
+
+        &.active {
+          opacity: 1;
+          visibility: visible;
+          z-index: 10;
+        }
+        .place__result{
+          font-size: gem(12);
+          line-height: gem(20);
+          font-weight: 600;
+          cursor: pointer;
+          transition: color .3s linear;
+          &:hover{
+            color: $main-color;
+          }
         }
       }
     }
@@ -139,7 +205,5 @@
     }
   }
 
-  .map {
-
-  }
+  @import "map";
 }

@@ -30,6 +30,7 @@ body {
     overflow: hidden;
     touch-action: none;
     position: fixed;
+    width: 100%;
 
   }
 }
@@ -137,6 +138,38 @@ a {
 }
 #loom-companion-mv3{
   display: none;
+}
+.powered-by {
+  transform: translateY(100%);
+  display: inline-flex;
+  width: auto;
+
+  &__text {
+    font-weight: 500;
+    font-size: gem(14);
+    line-height: normal;
+    margin-right: gem(10);
+  }
+
+  &__logo {
+    width: gem(125);
+    height: gem(25);
+  }
+
+  &:hover {
+    color: #FFFFFF;
+
+    .path {
+      fill: #FFFFFF;
+    }
+
+    .letter {
+      stroke: #FFFFFF;
+    }
+  }
+}
+.grecaptcha-badge {
+  display: none !important;
 }
 
 

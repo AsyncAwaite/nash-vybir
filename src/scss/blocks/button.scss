@@ -71,7 +71,18 @@
   &:hover{
       background-color: $light-blue ;
   }
-
+  &.disabled{
+    opacity: .8;
+    pointer-events: none;
+  }
 }
+  &.disabled{
+    opacity: .8;
+    pointer-events: none;
+  }
+  &_profile{
+    width: gem(30);
+    height: gem(30);
+  }
 
 }

@@ -41,12 +41,28 @@ function removeActive(arr) {
     });
 }
 
-function getElement(selector) {
-    return document.querySelector(selector);
+function getElement(selector, parent = document) {
+    return parent.querySelector(selector);
 }
 
-function getElements(selector) {
-    return document.querySelectorAll(selector);
+function getElements(selector, parent = document) {
+    return parent.querySelectorAll(selector);
+}
+
+function parseDateFromString(dateString) {
+
+    const dateParts = dateString.split(' - ');
+    let datePart = dateParts[0];
+    if (dateParts.length > 1) {
+        datePart = dateParts[1];
+    }
+    if (datePart.includes(' ')){
+        datePart = datePart.split(' ')[0]
+    }
+    const [year, month, day,] = datePart.split('-');
+    const parsedDate = new Date(year, month - 1, day);
+
+    return parsedDate;
 }
 
 
@@ -57,5 +73,5 @@ export {
     getElements,
     getElement,
     enableScrollAndSwipes,
-    disableScrollAndSwipes
+    disableScrollAndSwipes, parseDateFromString
 };

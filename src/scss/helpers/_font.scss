@@ -28,6 +28,10 @@
   }
 
   &-size {
+    &_12{
+      font-size: gem(12);
+      line-height: normal;
+    }
     &_15-18 {
       font-size: gem(15);
       line-height: gem(18);

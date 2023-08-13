@@ -1,21 +1,38 @@
-// import { modalBody, modal } from "./elements";
-
-
-import {header, modal, modalBody} from "./elements.js";
+import {modal, modalBody} from "./elements.js";
 import {getElement, getElements, removeActive} from "./helpers.js";
 import Form from "./Form.js";
-import flatpickr from "flatpickr";
+import {categories, lang, translateFields} from "./base.js";
+import {changeActive} from "./functions.js";
+import Modal from "./modal.js";
 
 
 export default function modalsEvents(target) {
     if (target.dataset.target == 'add-event') {
-
         renderAddEventModal();
-        if (getElement('.form-add-event')) {
-            new Form('.form-add-event').init();
+        const formAddEvent = getElement('.form-add-event');
+        new Form('.form-add-event').init();
+        const formTags = getElements('.form-tag', formAddEvent);
+        const formPrice = getElements('.form__price li', formAddEvent)
+        formTags.forEach(formTag => {
+            formTag.addEventListener('click', () => {
+                if (getElements('.form-tag.active', formAddEvent).length < 5) {
+                    formTag.classList.toggle('active')
+                } else {
+                    if (formTag.classList.contains('active')) {
+                        formTag.classList.remove('active');
+                    }
+                    if (getElements('.form-tag.active', formAddEvent).length == 5) {
+                        getElement('.form__item_tags', formAddEvent).classList.add('invalid');
+                        setTimeout(() => {
+                            getElement('.form__item_tags', formAddEvent).classList.remove('invalid');
+                        }, 3000)
+                    }
+                }
 
-        }
 
+            })
+        });
+        changeActive(formPrice);
     }
     if (target.dataset.target == 'add-ads') {
 
@@ -27,19 +44,20 @@ export default function modalsEvents(target) {
 
     }
 
-    if (target.hasAttribute('data-rate')) {
-        renderFormAnswer(target)
-        // renderReviewModal(target);
+    if (target.dataset.form) {
+        renderFormAnswer(target);
+        new Modal('.modal').attachModalEvents()
     }
     const closeBtn = ` <button type="button" class="modal__close pos-a">
-              <span class="icon-close icon-24"></span>
+              <span class="icon-cross icon-24"></span>
             </button>`
     modalBody.firstElementChild.insertAdjacentHTML('beforeend', closeBtn)
 }
-function renderAddEventModal(){
-    modalBody.innerHTML =` <div class="event-add modal__content" data-inside>
+
+function renderAddEventModal() {
+    modalBody.innerHTML = `     <div class="event-add modal__content" >
                 <h2 class="txt-uppercase txt-center">Додати подію</h2>
-                <form action="" class="form form-add-event" data-form="Add new event">
+                <form class="form form-add-event" data-form="Add new event">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form__item">
@@ -50,66 +68,6 @@ function renderAddEventModal(){
                                 </div>
                                 <div class="form__message"></div>
                             </div>
-                            <div class="form__item  form__item_date date-item">
-                                <label for="date">Дата і час <span>*</span></label>
-                                <div class="form__input pos-r flex">
-                                    <div class="date-item__icon flex-inline --just-center --align-center">
-                                        <span class="icon-calendar "></span>
-                                    </div>
-                                    <input type="text" id="date" name="date" data-form-date="uk" placeholder="11/11/2011">
-                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
-                                </div>
-                            </div>
-                            <div class="form__item  ">
-                                <label for="location" class="f-size__16 ">Локація <span>*</span></label>
-                                <div class="form__input pos-r">
-                                    <input type="text" id="location" name="location">
-                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
-                                </div>
-                                <div class="form__message">Вкажіть адресу, яку розпізнає Google</div>
-                            </div>
-                            <div class="form__item  ">
-                                <label for="link" class="f-size__16 ">Посилання на організатора / подію
-                                    <span>*</span></label>
-                                <div class="form__input pos-r">
-                                    <input type="text" id="link" name="link">
-                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
-                                </div>
-                            </div>
-                            <div class="form__item">
-                                <label class="f-size__16 "> Ціна
-                                    <span>*</span></label>
-                                <ul class="form__price">
-                                    <li data-price="free">Безкоштовно</li>
-                                    <li data-price="volunteer" class="active">Добровільний внесок</li>
-                                    <li data-price="less10">до 10 злотих</li>
-                                    <li data-price="more10">від 10 злотих</li>
-
-                                </ul>
-                            </div>
-                            <div class="form__item form__item_textarea ">
-                                <label for="description">Короткий опис <span>*</span></label>
-                                <div class="form__input form__input_textarea pos-r">
-                                    <textarea id="description"></textarea>
-                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
-
-                                </div>
-                                <div class="form__message"></div>
-                            </div>
-                            <div class="form__upload form__item ">
-                                <div class="form__upload-input d-flex" data-upload="">
-                                    <input type="file" id="file" accept=".png,.jpg,.jpeg" multiple="true">
-                                    <div class="descr">Прикріпити обкладинку (до 3МБ) <span class="icon-add"></span></div>
-                                </div>
-                                <div class="form__upload-container flex --just-between --align-center" data-container="">
-                                  <span>ssfssfsfsdfsdf.img</span>
-                                    <span class="icon-close"></span>
-                                </div>
-                                <div class="error pos-a form__message">
-<!--                                    Макс. розмір файлу не більше 10 мб.-->
-                                </div>
-                            </div>
-
 
                         </div>
                         <div class="col-md-6">
@@ -121,73 +79,108 @@ function renderAddEventModal(){
                                 </div>
                                 <div class="form__message"></div>
                             </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="form__item  form__item_date date-item">
-                                <label for="date-pl">Data i godzina <span>*</span></label>
+                                <label for="date">Дата і час <span>*</span></label>
                                 <div class="form__input pos-r flex">
                                     <div class="date-item__icon flex-inline --just-center --align-center">
                                         <span class="icon-calendar "></span>
                                     </div>
-                                    <input type="text" id="date-pl" name="date-pl" data-form-date="pl" placeholder="11/11/2011">
+                                    <input type="text" id="date" name="date" data-form-date="uk"
+                                           placeholder="11/11/2011">
                                     <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
-                                </div>
+                                </div><div class="form__message"></div>
+                                
                             </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="form__item  ">
-                                <label for="location-pl" class="f-size__16 ">Lokalizacja <span>*</span></label>
-                                <div class="form__input pos-r">
-                                    <input type="text" id="location-pl" name="location-pl">
-                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
-                                </div>
-                                <div class="form__message">Вкажіть адресу, яку розпізнає Google</div>
-                            </div>
-                            <div class="form__item  ">
-                                <label for="link-pl" class="f-size__16 ">Link do organizatora / wydarzenia
+                                <label for="link" class="f-size__16 ">Посилання на організатора / подію
                                     <span>*</span></label>
                                 <div class="form__input pos-r">
-                                    <input type="text" id="link-pl" name="link">
-                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                    <input type="text" id="link" name="link-organisation">
+                                    <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
+                                 
+                                </div><div class="form__message"></div>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form__item  ">
+                                <label for="location" class="f-size__16 ">Посилання на локацію <span>*</span></label>
+                                <div class="form__input pos-r">
+                                    <input type="text" id="location" name="location">
+                                    <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
                                 </div>
+                                <div class="form__message">Введіть посилання з Google Maps</div>
                             </div>
                             <div class="form__item">
-                                <label class="f-size__16 "> Cena
+                                <label class="f-size__16 "> Ціна
                                     <span>*</span></label>
                                 <ul class="form__price">
-                                    <li data-price="free">Bezpłatne</li>
-                                    <li data-price="volunteer" class="active">Darowizna</li>
-                                    <li data-price="less10">do 10 zł</li>
-                                    <li data-price="more10">od 10 zł</li>
+                                    <li data-price="free" class="active">Безкоштовно</li>
+                                    <li data-price="volunteer" >Добровільний внесок</li>
+                                    <li data-price="less10">до 10 злотих</li>
+                                    <li data-price="more10">від 10 злотих</li>
+
                                 </ul>
                             </div>
-                            <div class="form__item form__item_textarea ">
-                                <label for="description-pl">Krótki opis wydarzenia <span>*</span></label>
+                        </div>
+
+
+                        <div class="col-md-6">
+
+
+                            <div class="form__item ">
+                                <label for="description">Короткий опис <span>*</span></label>
                                 <div class="form__input form__input_textarea pos-r">
-                                    <textarea id="description-pl"></textarea>
-                                    <span class="icon-24 pos-a icon-check hide txt-color__success f-weight_800 "></span>
+                                    <textarea name="description" id="description"></textarea>
+                                    <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
 
                                 </div>
                                 <div class="form__message"></div>
                             </div>
+                            <div class="form__item form__item_textarea ">
+                                <label for="description-pl">Krótki opis wydarzenia <span>*</span></label>
+                                <div class="form__input form__input_textarea pos-r">
+                                    <textarea name="description-pl" id="description-pl"></textarea>
+                                    <span class="icon-24 pos-a icon-check  txt-color__success f-weight_800 "></span>
 
+                                </div>
+                                <div class="form__message"></div>
+                            </div>
+                            <div class="form__upload form__item ">
+                                <div class="form__upload-input d-flex" data-upload="">
+                                    <input type="file" id="file" accept=".png,.jpg,.jpeg" multiple="false">
+                                    <div class="descr">Прикріпити обкладинку (до 3МБ) <span class="icon-attach"></span>
+                                    </div>
+                                </div>
+                                <div class="form__upload-container flex --just-between --align-center"
+                                     data-container="">
+                                </div>
+                                <div class="error pos-a form__message">
+                                    <!--                                    Макс. розмір файлу не більше 10 мб.-->
+                                </div>
+                            </div>
 
 
                         </div>
-
-
                     </div>
                     <div class="row --align-end">
-                        <div class="col-lg-6">
-                            <div class="form__item form__item_tags mb_0 ">
-                                <label>Обрати теги <span>*</span></label>
-                                <div class="flex --wrap">
-                                    <button class="tag mr_12 active">Для підлітків</button>
-                                    <button class="tag mr_12">Зустрічі</button>
-                                    <button class="tag mr_12">Для дітей</button>
-                                    <button class="tag mr_12">Для всієї родини</button>
-                                    <button class="tag mr_12">Майстер-класи</button>
+                        <div class="col-12">
+                            <div class="form__item form__item_tags  ">
+                                <div class="flex --just-between --align-end mb_12">
+                                    <label>Обрати теги <span>*</span></label>
+                                    <div class="form__message">Оберіть від одного до пʼяти тегів</div>
                                 </div>
+                                <ul class="flex --wrap form__tags mb_32">
+                                  ${renderCategories()}
+                                </ul>
 
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-12">
                             <div class="form__item mb_0 mx">
                                 <button type="submit" class="btn mb_16">додати подію</button>
                             </div>
@@ -199,8 +192,9 @@ function renderAddEventModal(){
 
             </div>`
 }
-function renderAddAds(){
-    modalBody.innerHTML = `    <div class="bgc_white modal__content" data-inside>
+
+function renderAddAds() {
+    modalBody.innerHTML = `    <div class="bgc_white modal__content" >
                 <h2 class="txt-uppercase txt-center">Додати оголошення</h2>
                 <form action="" class="form form-add-ads" data-form="Add new event">
                     <div class="row mb_40">
@@ -467,36 +461,30 @@ function renderLoginModal(target) {
     })
 }
 
+function renderCategories() {
+    let fragment = '';
+    categories.forEach(category => {
+        fragment += `<li data-form-tag="${category.slug}" class="form-tag  ">${category[lang]}</li>`;
+    });
+    return fragment;
+}
 
 function renderFormAnswer(target) {
-    modal.classList = 'modal modal__form-answer';
-    modalBody.classList.add('form-answer');
-    let title, subtitle;
-    if (target.dataset.form == 'success') {
-        title = !isPL ? 'Дякуємо!' : 'thank you!';
-        subtitle = !isPL ? 'Ваша подія відправлена на модерацію!' : '';
-        modalBody.parentElement.classList.add('success');
-    } else {
-        title = !isPL ? 'От халепа!' : '...';
-        subtitle = !isPL ? "Щось пішло не так, ваша подія не додана" : '';
-        modalBody.classList.add('flex', '--align-center', '--just-center', '--dir-col');
-        modalBody.insertAdjacentHTML("afterbegin", `<div class="logo">
-              <svg class="icon">
-                <use xlink:href="#logo-uart"></use>
-              </svg>
-            </div>`)
+    const {formSuccessText, formErrorText, formSuccessTitle, formErrorTitle} = translateFields;
+    let title = formSuccessTitle[lang];
+    let subtitle = formSuccessText[lang];
+    if (target.dataset.form == 'error') {
+        title = formErrorTitle[lang];
+        subtitle = formErrorText[lang];
     }
     modalBody.innerHTML = `
-
-         
-            <div class="modal__title">
-                   <h3 class="text-uppercase">${title}</h3>
-            </div>
+<div class="modal__content form-answer" data-inside>
+   <div class="modal__title h5 text-uppercase f-weight_600">
+                  ${title}
+   </div>
 <div class="modal__subtitle h5">
  ${subtitle}
 </div>
-     
-           
-
-            `
+<button  class="btn modal__close" >зрозуміло</button>
+</div> `
 }
